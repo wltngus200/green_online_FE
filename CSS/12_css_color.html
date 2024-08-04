@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기초</title>
+    <style>
+        /* 눈으로 보이는 색이 아니라 실제 값을 봐야 함(스포이드 X) 투명도 적용 등의 문제  */
+        h1{color:blue; font-size:16px;}
+        .name{background-color:blue; color:whitesmoke;}
+        .hex{background-color:#0000ff; color:whitesmoke;}
+        .rgb{background-color:rgb(0,0,255); color:whitesmoke;}
+        .rgba{background-color:rgba(0,0,255, 0.5); color:whitesmoke;}
+        .hsl{background-color: hsl(240, 100%, 50%); color:whitesmoke;}
+        .hsla{background-color : hsla(240, 100%, 50%, 0.5); color:whitesmoke;}
+    </style>
+</head>
+<body>
+    <h1>CSS 구조</h1>
+    <!-- 작성하는 그대로 화면에 표현 -->
+    <pre>
+        선택자 : 요소를 선택
+        중괄호 안 : 선언 (속성: 값;)
+         ex. h1{color:blue; font-size:16px;}
+    </pre>
+    <h1>내부 스타일 시트에서 정의</h1>
+    <hr>
+    <h2>COLORS</h2>
+    <pre>
+        색상명: blue;
+        hex : #0000ff; = #00f; 로 작성해도 같은 결과
+        rgb : rgb(0,0,255);
+        rgb : rgb(0,0,255);
+        rgb+투명도 : rgba(0,0,255,0.5);
+        hsl : hsl(240, 100%, 100%);
+        hsl+투명도 : hsla(240, 100%, 100%, 0.5);
+    </pre>
+    <h3 class="name">name: 색상명</h3>
+    <h3 class="hex">hex: 색상명</h3>
+    <h3 class="rgb">rgb: 색상명</h3>
+    <h3 class="rgba">rgba: 색상명</h3>
+    <h3 class="hsl">hsl: 색상명</h3>
+    <h3 class="hsla">hsla: 색상명</h3>
+</body>
+</html>
