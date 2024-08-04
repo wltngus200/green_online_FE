@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+    <style>
+        #cap1{background-color: deepskyblue;}
+        #cap2{background-color: deeppink;}
+        #cap3{background-color: skyblue;}
+    </style>
+</head>
+<body>
+    <h1>list</h1>
+    <h2>Unodered List 비순차 목록</h2>
+        <ul>
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+        </ul>
+
+        <hr>
+
+        <!-- 주의 사항 1 : 리스트란 동일한 중요도의 항목이 2개 이상 나열된 것-->
+        <div>
+            <h2 id="cap1">--[주의사항 1]--</h2>
+            <ul>
+                <li>list item</li><!-- 위 처럼 하나만 오는 경우 제목 또는 패러그래프로 -->
+            </ul>
+            <ul>
+                <li>list item</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <!-- 주의 사항 2 : <ul> 밑에는 다른 태그가 와서는 안 됨 -->
+        <div>
+            <h2 id="cap2">--[주의사항 2]--</h2>
+            <ul>
+                <li>list item</li>
+                <li>list item</li>
+                <h2>리스트에 제목 X</h2>
+                <li>list item</li>
+                <li>list item</li>
+            </ul>
+        </div>
+        <div>
+            <h4>--[주의사항 2-수정]--</h4>
+            <ul>
+                <li>
+                    <h2>리스트에 제목 X</h2>
+                    <p>lorem ipsum</p>
+                </li>
+                <li>list item</li>
+                <li>list item</li>
+                <li>list item</li>
+            </ul>
+        </div>
+
+
+    <h2>Odered List 순차 목록</h2>
+        <ol>
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+        </ol>    
+    <h2>Definition List 정의 목록 ~ 설명 목록(description list)</h2>
+        <dl>
+            <dt>definition term 정의 용어명1, 제목</dt>
+            <dd>definition description 설명1</dd>
+            <dt>definition term 정의 용어명2, 제목</dt>
+            <dd>definition description 설명2</dd>
+        </dl>
+        <div>
+            <h2 id="cap3">--[주의 사항]--</h2>
+            <dl>
+                <dt>definition term 정의 용어명1, 제목</dt>
+                <dd>definition description 설명1</dd>
+                <dt>definition term 정의 용어명2, 제목</dt>
+                <dd>definition description 설명2</dd>
+            </dl>
+        </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiMedia</title>
+</head>
+<body>
+    <h1>MultiMedia</h1>
+    <h2>Video</h2>
+    <!-- controls는 제어(재생 정지)
+     autoplay는 자동 재생 : 소리가 있으면 화면 해설을 알아들을 수 없음
+     muted 음소거 loop는 반복 재생-->
+    <video src="tpk.mp4" controls>비디오입니다(img의 alt처럼 대체 텍스트)</video>
+    <!-- 브라우저에서 지원하지 않는 경우, 안 나올 때를 대비한 폴백 컨텐츠 -->
+
+    <!-- 썸네일처럼 대표하는 이미지 작성 -->
+    <video controls muted poster="tom.jfif">
+        <source src="tpk.mp4" type="video/mp4" />
+        <source src="tpk.ogv" type="video/ogv" />
+        <source src="tpk.webm" type="video/webm" />
+        <p>이 브라우저는 영상을 지원하지 않습니다</p>
+    </video>
+    <!-- 영상 소리가 없으면 파이어폭스에서는 autoplay가 없어도 자동 재생 -->
+    <hr>
+    <h2>Audio</h2>
+    <audio src="kan.mp3" controls></audio>
+    <!-- 브라우저마다 다른 재생버튼 재생바 등등 ui를 통일하기 위해선 라이브러리 필요 -->
+    <audio>
+        <source src="kan.mp3" tpye="audio/mp3"> 
+        <source src="kan.ogg" tpye="audio/ogg"> 
+        <source src="kan.mpeg" tpye="audio/mpeg">
+        <p>이 브라우저는 오디오를 재생할 수 없습니다</p>
+    </audio>
+    <!-- 사이트에 담긴 동영상은 고객의 컴퓨터에 다운 되어 재생=>접속이 많으면 트래픽 초과
+     따라서 외부 서버(cloudinary.com)에 다운 받은 뒤 그걸 src에 넣어서 활용
+     유튜브에 올려서 링크를 올릴 수도(유튜브는 외부 트래픽 사용) -->
+
+    <hr>
+    
+    <h2>Youtube</h2>
+    <!-- 외부의 사이트를 그대로 가져옴 -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/jRqNI-5xatA?si=zd3xd1C25EaLdJhk&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+    <h3>i frame</h3>
+    <!-- ex. www.naver.com 처럼 거부 하는 것도 있음  -->
+    <iframe width="315" src="http://eztoweb.maru.net" height="600"></iframe>
+
+    <hr>
+
+    <h2>Vimeo</h2><!-- vimeo.com -->
+    <!-- 공유하기 버튼 여러 옵션 제공 -->
+</body>
+</html>
