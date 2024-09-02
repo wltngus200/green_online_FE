@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        /* table border="1" 속성에서 이중 선을 없애기 위한 코드 */
+        table {
+            border-collapse: collapse;
+            width:80%;
+            }
+        .w10{width:10%;}
+        .w30{width:20%;}
+    </style>
+</head>
+<body>
+    <h1>table</h1>
+    <table border="1">
+        <!-- 테이블의 테두리를 주는 속성(원래는 CSS처리가 필요) -->
+        <tr><!-- table row 가로 한 줄을 만들어감 -->
+            <td>구분</td><!-- table data 한 줄의 한 칸씩 이어나감-->
+            <td>제목1</td>
+            <td>제목2</td>
+            <td>제목3</td>
+        </tr>
+        <tr><!-- table row -->
+            <td>1</td><!-- table data -->
+            <td>data11</td>
+            <td>data12</td>
+            <td>data13</td>
+        </tr>
+        <tr><!-- table row -->
+            <td>2</td><!-- table data -->
+            <td>data21</td>
+            <td>data22</td>
+            <td>data23</td>
+        </tr>
+        <tr><!-- table row -->
+            <td>합계</td><!-- table data -->
+            <td>total1</td>
+            <td>total2</td>
+            <td>total3</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h3 style="color:red">thead, tbody, tfoot으로 구조를 명확하게 함</h3>
+    <!-- thead,tbody,tfoot 처리를 통해 검색이 잘 되도록 
+     화면상 표현과 관련이 있는 것이 아니라 구조의 명확도와 속도 문제 -->
+    <table border="1">
+        <thead><!-- 표의 머리임을 표시 -->
+            <!-- thead를 주면 table data => table header(제목 성질) -->
+            <tr>
+                <th scope="col">구분</th>
+                <th scope="col">제목1</th>
+                <th scope="col">제목2</th>
+                <th scope="col">제목3</th>
+            </tr>
+        </thead>
+        <tbody><!-- 표의 몸통부임을 표시 -->
+            <tr>
+                <th scope="row">1</th>
+                <td>data11</td>
+                <td>data12</td>
+                <td>data13</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>data21</td>
+                <td>data22</td>
+                <td>data23</td>
+            </tr>
+        </tbody>
+        <tfoot>
+        <tr><!-- 표의 끝부분임을 표시 -->
+            <th scope="row">합계</th>
+            <td>total1</td>
+            <td>total2</td>
+            <td>total3</td>
+        </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+    <h3 style="color:plum">셀 병합</h3>
+    <h3 style="color:greenyellow">테이블 제목 - caption</h3>
+    <table border="1">
+        <!-- 테이블에 제목 부여하기 -->
+        <!-- 방법 1 caption -->
+        <caption>
+            <h2>테이블에 제목(구)summary</h2>
+            <p>
+                설명 예전엔 summary라는 태그를 활용해 제목을 붙였으나 사라짐
+            </p>
+        </caption>
+        <!-- 캡션 내부의 것은 무조건 가운데 정렬 -->
+        <thead>
+            <tr>
+                <th scope="col">구분</th>
+                <th scope="col">제목1</th>
+                <th scope="col">제목2</th>
+                <th scope="col">제목3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td colspan="3">data11</td>
+                <!-- <td>data12</td>
+                <td>data13</td> -->
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td rowspan="3">data21</td>
+                <td>data22</td>
+                <td>data23</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <!-- <td>data31</td> -->
+                <td>data32</td>
+                <td>data33</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <!-- <td>data41</td> -->
+                <td>data42</td>
+                <td>data43</td>
+            </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th scope="row">합계</th>
+            <td>total1</td>
+            <td>total2</td>
+            <td>total3</td>
+        </tr>
+        </tfoot>
+    </table>
+
+    <h3 style="color:rgb(43, 235, 65)">테이블 제목 - figure</h3>
+    <!-- 방법 2 figure(이미지 그래프 테이블을 묶는 태그) 가운데 정렬 X-->
+    <figure><!-- 블럭요소 -->
+        <figcaption>
+            <h2>테이블에 제목2</h2>
+            <p>
+                설명 다른 방식으로 제목 남기기
+            </p>
+        </figcaption>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th scope="col">구분</th>
+                    <th scope="col">제목1</th>
+                    <th scope="col">제목2</th>
+                    <th scope="col">제목3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td colspan="3">data11</td>
+                    <!-- <td>data12</td>
+                    <td>data13</td> -->
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td rowspan="3">data21</td>
+                    <td>data22</td>
+                    <td>data23</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <!-- <td>data31</td> -->
+                    <td>data32</td>
+                    <td>data33</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <!-- <td>data41</td> -->
+                    <td>data42</td>
+                    <td>data43</td>
+                </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <th scope="row">합계</th>
+                <td>total1</td>
+                <td>total2</td>
+                <td>total3</td>
+            </tr>
+            </tfoot>
+        </table>
+    </figure>
+
+    <hr>
+    <h3 style="color:cornflowerblue">테이블의 각 셀의 너비를 지정(width)</h3>
+    <!-- width px와 % 모두 적용가능 -->
+    <h1>table</h1>
+    <table border="1" width="80%">
+    <!-- 브라우저 액정 길이에 비례 -->
+        <tr>
+            <td width="10%">구분</td>
+            <!-- <td width="80px">구분</td> -->
+            <td width="30%">제목1</td>
+            <td width="30%">제목2</td>
+            <td width="30%">제목3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>data11</td>
+            <td>data12</td>
+            <td>data13</td>
+        </tr>
+    </table>
+
+    <hr>
+    <h3 style="color:rgb(9, 67, 175)">테이블 셀 너비 지정(colgroup)</h3>
+    <!-- width px와 % 모두 적용가능 -->
+    <h1>table</h1>
+    <table border="1" width="80%">
+    <colgroup>
+        <col width="10%">
+        <col width="30%">
+        <col width="3afd0%">
+        <col width="3adf0%">
+    </colgroup>
+    <!-- 브라우저 액정 길이에 비례 -->
+        <tr>
+            <td>구분</td>
+            <td>제목1</td>
+            <td>제목2</td>
+            <td>제목3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>data11</td>
+            <td>data12</td>
+            <td>data13</td>
+        </tr>
+    </table>
+
+    
+    <hr>
+    <h3 style="color:rgb(9, 42, 104)">테이블 셀 너비 지정(colgroup)-심화</h3>
+    <!-- width px와 % 모두 적용가능 -->
+    <h1>table</h1>
+    <table border="1">
+    <colgroup>
+        <col class="w10">
+        <col class="w30">
+        <col class="w30">
+        <col class="w30">
+    </colgroup>
+        <tr>
+            <td>구분</td>
+            <td>제목1</td>
+            <td>제목2</td>
+            <td>제목3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>data11</td>
+            <td>data12</td>
+            <td>data13</td>
+        </tr>
+    </table>
+</body>
+</html>
