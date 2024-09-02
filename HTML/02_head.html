@@ -3,7 +3,9 @@
     <head>
         <meta charset="utf-8">
         <!-- 페이지의 글씨가 만들어지는 글자 조합이 utf-8 -->
-         <title>HTML 문서 - 헤더영역 태그</title>
+         <title>헤더영역 태그 - HTML 문서</title>
+         <!-- 다른 태그가 오지 않고 순수하게 제목만 작성함 -->
+         <!-- 탭이 작아져도 출력될 수 있게 중요 내용을 앞쪽에 기입 -->
          <meta name="keywords" content="글자 집합, 제목, 키워드, 설명, robots">
          <!-- htmL5에서 검색하는 유저가 있다면 이 문서가 검색될 확률이 올라감 
             키워드는 오남용(페이지와 관련 없는 키워드 넣기)을 해서는 안 됨 
@@ -14,7 +16,7 @@
         <meta name="robots" content="index, follow">
         <!-- index : 이 페이지는 이러한 내용이 있다고 수집할 수 있게
              follow : 이 페이지에서 어느 페이지에 링크가 걸려있는지도 수집 
-             반대의 경우에는 앞에 no를 붙인다 all / none -->
+             반대의 경우에는 앞에 no를 붙인다 또는 모두 허용 모두 금지하는 all / none -->
              <!-- robot에게 좀 더 상세하게 명령 -->
 
              <!-- 홈페이지 루트에는 반드시 index.html이 필요
@@ -24,10 +26,15 @@
         <meta name="author" content="홍길동"><!-- 만든 사람의 이름 -->
         <meta name="reply-to" content="hong@gildong.kr"><!-- 만든 사람 연락처 -->
         <meta name="generator" content="microsoft visual studio code"><!-- 페이지를 만든 에디터 -->
-        <meta name="date" content="2020-10-04 09:00"><!-- 작성 시간 -->
-        <!-- viewport가 자동으로 이동되게 -->
+        <meta name="date" content="2020-10-04 09:00"><!-- 문서의 작성 날짜 및 시간 -->
+        <!-- viewport가 자동으로 이동되게 하는 새로고침 속성은 다음 시간에 03.viewport-->
     </head>
     <body>
         <h1> 헤더영역 태그</h1>
+        <p>
+            홈페이지의 첫 페이지는 반드시 index.html
+            php, jsp, asp등으로 개발 언어라면 index.php
+            robots.txt를 root와 같은 위치에 위치 시키고 robot에게 명령
+        </p>
     </body>
 </html>
