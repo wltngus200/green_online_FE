@@ -1,0 +1,38 @@
+<!-- 6차시: 링크를 거는 사용법 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abc corporation</title>
+</head>
+<body>
+    <!-- 상위 폴더 안의 index.html -->
+    <h1><a href="#">abc.com</a></h1>
+    <h2>Main Menu</h2>
+    <ul><!-- 번호가 매겨지지 않는 리스트 -->
+        <!-- li는 리스트를 의미 -->
+        <!-- 같은 폴더 내의 about -->
+        <li><a href="about.html">about us</a></li>
+        <!-- docs라는 폴더에 있는 services.html 다른 폴더에 있기 때문에 폴더명 명시 해줘야 함-->
+        <li><a href="docs/services.html">services</a></li>
+        <li><a href="docs/location.html">location</a></li>
+        <!-- 하위의 하위폴더를 들어가는 것을 표현 -->
+        <li><a href="docs/html/partners.html">partners</a>
+            <ul><!-- 서브메뉴 -->
+                <!-- 어디에서든 적용되는 절대주소 -->
+                <li><a href="http://www.naver.com">naver</a></li>
+                <li><a href="http://www.daum.net">daum</a></li>
+             </ul>
+        </li>
+        <!-- 링크를 클릭하면 연결되어있는 zip버튼 다운로드 -->
+        <!-- 다운로드에 들어가는 건 브라우저가 직접 해석해서 보여주지 못 하는 거 -->
+        <li><a href="docs/catalog.zip">catalog download</a></li>
+        <!-- 담당자에게 메일을 보내는 기능 : 메일 클라이언트 실행 -->
+        <li><a href="mailto:master@abc.com">contact us</a></li>
+    </ul>
+
+
+</body>
+</html>

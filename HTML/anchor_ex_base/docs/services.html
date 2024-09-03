@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abc corporation</title>
+</head>
+<body>
+    <!-- 현재 문서가 위치하는 폴더보다 상위의 폴더로 나가야 함 ../ -->
+    <h1><a href="../index.html">abc.com</a></h1>
+    <h2>SERVICES</h2>
+    <ul>
+        <li><a href="#">about us</a></li>
+        <li><a href="#">services</a></li>
+        <!-- 같은 레벨에 존재함 -->
+        <li><a href="location.html">location</a></li>
+        <!-- 현재 작성중인 문서와 같은 단계의 폴더 내부에 존재 -->
+        <li><a href="html/partners.html">partners</a>
+            <ul>
+                <li><a href="http://www.naver.com">naver</a></li>
+                <li><a href="http://www.daum.net">daum</a></li>
+             </ul>
+        </li>
+        <!-- index.html과는 다르게 같은 레벨에 존재 -->
+        <li><a href="catalog.zip">catalog download</a></li>
+        <!-- 메일 클라이언트는 절대 주소로 저장 -->
+        <li><a href="mailto:master@abc.com">contact us</a></li>
+    </ul>
+
+
+</body>
+</html>
