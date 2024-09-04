@@ -10,7 +10,8 @@
 <body>
     <!-- 각 항목을 확인하고 다시 맨 위로 돌아오는 법 2 -->
     <!-- 제목에 id를 주고 이 위치로 오게 <a> 태그 -->
-    <h1 id="top"><a href="index.html">abc.com</a></h1>
+        <!-- a 태그는 사진, 텍스트, 페러그래프 전체에 링크 가능 -->
+    <h1 id="top"><a href="index.html"><img src="images/ABC_com.gif" art="logo"></a></h1>
     <h2>ABOUT US</h2><!-- 제목 -->
     <ul>
         <!-- 자기자신이기 때문에 주소를 써도 되고 안 써도 됨 -->
@@ -39,8 +40,14 @@
     <hr/>
     <!-- h2들을 구분하기 위해 id부여 -->
     <h2 id="ci">Our CI</h2>
-    <!-- alt의 기능 : 대체 이미지, 검색 키워드 -->
-    <img src="images/ABC_com.gif" alt="abc.com logo">
+    <!-- 07_image 이미지 기능 -->
+    <!-- 현재 문서와 같은 레벨의 이미지 폴더 안의 사진 -->
+    <!-- alt의 기능 : 대체 텍스트, 검색 키워드, 웹 접근성 화면 해설시 읽어줌 -->
+    <!-- alt 속성은 필수적으로 들어가야 하고 값은 의미가 있는 경우에만 사용 (장식 용도의 사진은 값을 넣지 않음)-->
+    <img src="images/ABC_com.gif" alt="abc.com logo" height="200" width="200">
+    <!-- height, width 중 하나만 작성할 경우 자동적으로 비율대로 확대 축소
+        비율이 깨지지 않도록 유지 및 기존 사이즈 활용(포토샵 등 활용해 사전에 해당 비율의 사진 확보 필요) -->
+    <!-- 큰 사진을 축소해서 출력하면 필요 이상의 리소스가 낭비 되고 그것이 누적되면 부담 ->CSS를 통하는 것 추천 -->
     <P>
     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </P>
@@ -95,25 +102,33 @@
         <!-- 다시 맨 위로 이동하는 링크 -->
         <a href="#">Top</a>
     </p>
+
+    <hr>
+    <!-- 07_image.html 좌표에 따른 이미지 링크 연습 -->
     <h2>location</h2>
     <!-- 서울 지역마다 링크 걸기 : a 태그 안에 img 태그가 있으면 사진 자체에 걸림 -->
     <!-- 절대값을 지정해서 그 부분을 클릭했을 때 이동하도록 좌표(포토샵, 그림판 등으로 확인) -->
     <!-- 좌표문제는 온라인 툴(image map generator)로 해결 --> 
-    <!-- poly 선택시 다각형 타겟 설정은 어느 탭으로 열릴지 (BLANK) -->
+    <!-- Circle 원 Rect 사각형 poly 다각형 타겟 설정은 어느 탭으로 열릴지 (_BLANK) -->
     <img src="images/seoul_map.gif" usemap="#image-map">
     <!-- usemap과 map name의 이름은 맞춰주어야 한다 -->
     <map name="image-map">
-    <area target="_blank" alt="NAVER" title="NAVER" href="http://www.naver.com" coords="297,260,335,284" shape="rect">
-    <area target="_blank" alt="DAUM" title="DAUM" href="http://www.daum.net" coords="198,177,25" shape="circle">
-    <area target="_blank" alt="GOOGLE" title="GOOGLE" href="http://www.google.com" coords="249,188,231,187,232,200,225,204,244,208,259,208,260,218,264,215,272,218,287,202,287,195,285,188,263,187" shape="poly">
+        <area target="_blank" alt="NAVER" title="NAVER" href="https://www.naver.com/" coords="198,177,26" shape="circle">
+                                                                                        <!-- x축 y축 반지름 -->
+        <area target="_blank" alt="GOOGLE" title="GOOGLE" href="https://www.google.com/" coords="281,254,289,277,286,270,285,265,293,278,279,245,289,230,306,240,326,252,333,258,337,268,354,278,366,284,374,288,382,302,390,318,385,325,375,325,363,332,349,308,335,314,321,313,309,298,301,296,293,278,289,277" shape="poly">
+                                                                                                <!-- 각 점의 좌표 -->
+        <area target="_blank" alt="DAUM" title="DAUM" href="https://www.daum.net/" coords="200,256,138,229" shape="rect">
     </map>
 
+    <hr>
+    <!-- 더미 이미지 사이트에서 이미지 -->
     <h2>Dumm image</h2>
     <!-- 숫자 한 개만 쓰면 정사각형, 가로세로 지정시 문자는 x -->
-    <img src="http://placehold.it/100x200" alt="">
-    <!-- 더미 이미지 사이트에서 랜덤 이미지 -->
-    <img src="https://source.unsplash.com/random/200x200" alt="랜덤이미지">
-    <img src="https://picsum.photos/200/500?grayscale" alt="랜덤이미지">
+    <img src="http://placehold.it/100x200" alt="placehold 랜덤이미지">
+    <!-- ? 이후는 키워드 -->
+    <img src="https://source.unsplash.com/random/200x200?city,night" alt="unsplash 랜덤이미지">
+    <!-- x가 아니라 /로 사이즈 지정, 흑백이미지 출력 -->
+    <img src="https://picsum.photos/300/200?grayscale" alt="picsum 랜덤이미지">
     
 </body>
 </html>
