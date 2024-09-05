@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia</title>
+</head>
+<body>
+<h1>Multimedia</h1>
+
+<h2>Video</h2>
+<!-- <video src="video/vivaldi.mp4" controls muted>
+    <p>
+        비발디의 여름 연주영상입니다.
+        !-- 폴백 컨텐츠 브라우저가 재생을 할 수 없는 경우 img의 alt와 같은 기능 --
+    </p>
+</video> -->
+
+<!-- 웹에서 표현할 수 있는 비디오 포멧: mp4, ogv, webm -->
+<!-- 확장자에 관계 없이 모두 재생 -->
+<video controls muted autoplay loop poster="images/visual studio code.jfif">
+    <source src="video/vivaldi.mp4" type="video/mp4"/>
+    <source src="video/vivaldi.ogv" type="video/ogv"/>
+    <source src="video/vivaldi.webm" type="video/webm"/>
+                                <!-- type=MIME-type -->
+    <!-- 실제 코드 작성시 별도로 인코딩을 거쳐서 확장자 변환 -->
+    <!-- 모두 지원하지 못 하는 브라우저의 경우 출력할 폴백 컨텐츠 -->
+    <p>이 브라우저는 영상을 재생할 수 없습니다.</p>
+    <!-- autoplay가 없을 경우는 첫 장면이 출력되는데 썸네일처럼 별도의 사진을 올리고 싶을 때 poster -->
+</video>
+<!-- controls 컨트롤바가 표시
+     autoplay 자동재생
+     loop 반복재생-->
+<!-- 시각장애인의 스크린리더를 통한 화면 이해를 방해하지 않기 위해 브라우저에서 자동재생 차단 -> muted를 통해 재생 -->
+<hr>
+
+<h2>Audio</h2>
+<!-- 각 브라우저의 컨트롤바 등 UI를 바꾸고 싶다면 js library활용, 나만의 버튼 만들기 가능 -->
+<!-- 오디오 역시 스크린 리더에 방해가 되므로 자동재생이 되어서는 안 된다 -->
+<!-- <audio src="audio/예제용 audio_sample_01.mp4" controls></audio> -->
+<audio controls>
+    <source src="audio/예제용 audio_sample_01.mp4" type="audio/mpeg">
+    <source src="audio/예제용 audio_sample_01.ogg" type="audio/ogg">
+    <p>이 브라우저는 오디오를 제공하지 않습니다.</p>
+</audio>
+
+<hr>
+<!-- 외부 트래픽(사이트에 접속하는 컴퓨터들에 다운로드 되는 데이터의 양)
+  그 용량이 서버에서 지원하는 양을 초과하면 트래픽 초과로 더이상 화면 볼 수 없음
+  따라서 용량이 큰 파일이 있을 경우 외부서버(ex.cloudinary.com을 활용) -->
+<h2>Youtube</h2>
+<!-- iframe는 내가 만드는 페이지에 외부 사이트를 그대로 가져오는 것(별도의 태그가 필요 없다) -->
+<p>3rd project presentation</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6fogD8UH548?si=TXyJvNRfc4FxBO3T&amp;start=1916" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<!-- src의 값으로 가져오고 싶은 외부 사이트의 주소
+ 단, 몇몇 사이트는 iframe으로 외부 사이트에 노출 되는 것을 막음 ex.naver -->
+<iframe width="315" src="http://www.google.com" height="600"></iframe> 
+
+<!-- vimeo.com -->
+<h2>Vimeo</h2>
+<iframe src="https://player.vimeo.com/video/50727301?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="600" height="255" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Party Wave"></iframe>
+</body>
+</html>
