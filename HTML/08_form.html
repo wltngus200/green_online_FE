@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>회원가입 1</title>
     <style>
         #button{background-color: rgb(255, 117, 63);}
     </style>
@@ -20,13 +20,15 @@
             <legend>필수 입력값</legend>
             <!-- method는 값을 어떻게 주고 받을지 명시
                     get: 주소표시 줄에 ? 뒤에 사용자 입력 값이 추가
-                    post: 문서에 포함되어 가기 때문에 사용자 입력값이 노출 X(민감한 정보는 반드시 post로 전송) 단 실제로 처리할 수 있는 파일이어야 함 -->
+                    post: 문서에 포함되어 가기 때문에 사용자 입력값이 노출 X(민감한 정보는 반드시 post로 전송) 단 실제로 처리할 수 있는 파일이어야 함(>>405 error) -->
             <!-- label과 input의 연결 클릭하면 입력창으로 이동 -->
             <p><!-- 각 폼에 1개의 블럭을 할당(inline->block) -->
                 <!-- input의 id명과 for가 일치, 그룹으로 묶음으로 인해서 '이름'을 클릭했을 때 폼이 활성화 -->
                 <label for="username">이름 :</label><!-- 형성된 폼에 무엇을 입력해야 하는지 표시-->
                     <!-- 입력 받을 타입 -->
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" required placeholder="홍길동" autofocus minlength="2" maxlength="7" size="20">
+                <!-- 09.form 일부: placeholder 예시 문장, autofocus 자동 커서 위치 
+                    minlength, maxlength 최대 최소 길이, size 입력칸의 크기-->
                 <!-- name는 데이터베이스를 만든 사람과 반드시 협의 -->
             </p>
             <p>
@@ -37,8 +39,11 @@
             <p>
                 <label for="user">패스워드 :</label>
                 <!-- 비밀번호 노출은 민감하기 때문에 type로 password 입력 ex. ***처럼 출력 -->
-                <input type="password" id="userpassword" name="userpw" required>
-                <!-- 메일침프 회원가입처럼 비번 하나하나 입력할 때마다 체크(스크립트 연동) -->
+                <input type="password" id="userpassword" name="userpw" pattern="[a-zA-Z]{5}" required>
+                <!-- 09.form 일부: pattern 정규식(영어 대소문자 상관 없이 5글자 이상)-->
+                <!-- 메일침프 회원가입처럼 비번 하나하나 입력할 때마다 체크(스크립트 연동) 
+                 html차원에서 유효성 검사 및 오류 메세지 출력 -> 스크립트를 통해 규칙 지정 및 메세지 지정 가능 -->
+                 <!-- <form novalidation>을 할 경유 유효성 검사를 해 주지 않음(스크립트를 통해서만 하겠다) -->
             </p>
         </fieldset>
 
@@ -69,8 +74,8 @@
                 <label for="ad">광고 매체</label>
                 <input type="radio" name="route" id="ad" value="광고">
             </p>
-            <!-- 여러개를 체크하는 값 -->
             <p>
+                <!-- 여러개를 체크하는 값(중복 체크) -->
                 <span>관심사항</span>
                 <label for="lang-html">HTML</label>
                 <input type="checkbox" name="search" id="lang-html" value="html">
@@ -80,7 +85,7 @@
                 <input type="checkbox" name="search" id="lang-js" value="js">
             </p>
             <p>
-                <sapn>인사말</sapn>
+                <sapn>인사말</sapn><!-- 여러줄을 입력할 수 있는 인삿말 input으로 불가 -->
                 <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
                 <!-- 태그 사이에 공백이 반영되어 보여지기 때문에 주의 필요 -->
             </p>
@@ -91,8 +96,6 @@
             <input id="button" type="submit" value="전송">
             <!-- value에 아무런 값도 할당하지 않으면 제출로 표시 -->
         </p>
-
     </form>
-    <!-- 태그가 브라우저에서 사용이 가능한지 확인하는 사이트 caniuse.com -->
 </body>
 </html>
