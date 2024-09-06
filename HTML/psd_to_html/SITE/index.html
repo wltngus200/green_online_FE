@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <!-- fontawesome을 쓸 수 있게 하는 cdn코드(다운 받지 않고 fontawesome 서버의 것을 빌려옴) -->
+    <!-- 영상 속 버전보다 높은 것을 가져왔더니 해결 되었다 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- 직접 다운 받을 때는 다운로드에서 web용 다운받기 -> css와 webfont를 같이 가져와야 함 -->
+    <!-- all.min은 모든 걸 가져오겠다 -->
+    <!-- <link rel="stylesheet" href="css/all.min.css"> -->
+</head>
+<!-- http://www.abc.com/index.html 사이트의 첫 시작은 index.html이기 때문에 반드시 있어야 함 -->
+<!-- 11차시 여행 웹 사이트 제작 -->
+<body>
+    <header>
+        <div class="slogan"><!-- 모두를 감싸는 네모를 CSS로 구현 -->
+            <h2>LOREM IPSUM</h2>
+            <!-- 밑줄을 CSS로 구현 -->
+            <h1>Travel</h1>
+            <p>The inspriational adventures around the world</p>
+        </div>
+    </header>
+    <main>
+        <!-- section 밑에는 반드시 제목이 존재해야 함 -->
+        <section class="about_me">
+            <!-- 글 부분과 사진부분이 별도로 존재, 글자 위로 사진을 absolute로 띄우기도 가능 -->
+                <h2 class="sec_tt">About_me</h2><!-- 같은 서식을 가지는 제목부를 class로 묶음 -->
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui ipsum eveniet voluptatem, facilis dolores similique saepe cum placeat deserunt modi necessitatibus. Pariatur totam, explicabo repellat nesciunt eveniet consequatur sapiente impedit?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. A fugiat exercitationem numquam? 
+                </p>
+                <p>
+                                        <!-- CSS에서 대문자로 전환 가능 -->
+                    <a href="" class="btn">read more</a><!-- read more 버튼이 여러군데 존재-->
+                </p>
+                <img src="images/about_me.jpg" alt=""><!-- 장식은 alt를 비워도 됨 -->
+        </section>
+        <section class="latest_articles">
+            <h2>Latest Articles</h2>
+            <!-- 동일한 조건을 가진 것들이 3개가 나열=list -->
+            <ul class="latest_articles_list">
+                <li><!-- 이미지, 제목, 내용의 3개의 구조 -->
+                    <img src="images/latest_01.jpg" alt="최신 기사">
+                    <h3>Lorem Ipsum Dolor</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias a quo laborum qui quas beatae earum aliquid provident nam! Et, ipsa nam enim eveniet voluptates modi ducimus quaerat hic.</p>
+                    <a href="">read more <img src="images/more_arrow.png" width=10 height=10 alt="화살표 이미지"></a>
+                    <!-- width height를 주지 않는 것이 좋으나 별도 저장한 파일 크기가 너무 커서 임의 설정 -->
+                </li>
+                <li>
+                    <img src="images/latest_02.jpg" alt="최신 기사">
+                    <h3>Lorem Ipsum Dolor</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias a quo laborum qui quas beatae earum aliquid provident nam! Et, ipsa nam enim eveniet voluptates modi ducimus quaerat hic.</p>
+                    <a href="">read more <img src="images/more_arrow.png" width=10 height=10 alt="화살표 이미지"></a>
+                </li>
+                <li>
+                    <img src="images/latest_03.jpg" alt="최신 기사">
+                    <h3>Lorem Ipsum Dolor</h3>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam molestias a quo laborum qui quas beatae earum aliquid provident nam! Et, ipsa nam enim eveniet voluptates modi ducimus quaerat hic.</p>
+                    <a href="">read more <img src="images/more_arrow.png" width=10 height=10 alt="화살표 이미지"></a>
+                </li>
+            </ul>
+        </section>
+        <section class="contact">
+            <img src="images/contect.jpg" alt="">
+            <!-- 작성 폼 존재(이름, 이메일, 내용) -->
+            <form action="#">
+                <!-- 전송 가능한 폼이 아니기 때문에 임시로 # -->
+                <h2 class="sec_tt">Contact</h2>
+                <div class="field">
+                    <!-- 제시된 디자인에서는 폼에 Your name, mail등이 표시되지 않기 때문에 CSS에서 처리하기 위해 공통 class hidden을 줌 -->
+                    <label for="username" class="hidden">Your name</label>
+                    <!-- id는 데이터베이스의 필드명 -->
+                    <input type="text" id="username" name="username" placeholder="your name">
+                    <label for="usermail" class="hidden">Your mail</label>
+                    <input type="email" id="usermail" name="usermail" placeholder="your name">
+                    <!-- name=DB의 field명 -->
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="message"></textarea>
+                </div>
+                <!-- 전송은 폼태그 안에 안에 기본 값이 submit이기 때문에 별도로 적어주지 않아도 됨 -->
+                <button>Send Message</button>
+            </form>
+
+        </section>
+    </main>
+    <footer>
+        <!-- fontawesome cdn 쓸 수 있는 CSS경로 => 맨 위에 추가함으로서 fontaswesome의 아이콘 사용 가능 -->
+        <ul class="social_link">
+            <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+            <!-- X-twitter 왜 안되는 거지 -->
+            <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href=""></a><i class="fa-brands fa-pinterest"></i></li>
+        </ul>
+    </footer>
+    <!-- 최종 작업으로 W3Validater로 확인 -->
+</body>
+</html>
