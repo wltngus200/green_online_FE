@@ -6,33 +6,37 @@
     <title>CSS 기초</title>
     <style>
         /* 눈으로 보이는 색이 아니라 실제 값을 봐야 함(스포이드 X) 투명도 적용 등의 문제  */
+        /* 요소 선택 {선언들} */
         h1{color:blue; font-size:16px;}
+        h3{background-color: blue; color:white;}
         .name{background-color:blue; color:whitesmoke;}
         .hex{background-color:#0000ff; color:whitesmoke;}
         .rgb{background-color:rgb(0,0,255); color:whitesmoke;}
         .rgba{background-color:rgba(0,0,255, 0.5); color:whitesmoke;}
+        /* l을 100%로 설정하면 무조건 하얀색, 원래 색깔은 50%로 설정 */
         .hsl{background-color: hsl(240, 100%, 50%); color:whitesmoke;}
         .hsla{background-color : hsla(240, 100%, 50%, 0.5); color:whitesmoke;}
     </style>
 </head>
 <body>
     <h1>CSS 구조</h1>
-    <!-- 작성하는 그대로 화면에 표현 -->
     <pre>
+        <!-- pre는 내가 작성하는 그대로 보여짐 -->
         선택자 : 요소를 선택
-        중괄호 안 : 선언 (속성: 값;)
+        중괄호 안 선언들을 작성
+                  ㄴ 선언 = 속성: 값;
          ex. h1{color:blue; font-size:16px;}
     </pre>
     <h1>내부 스타일 시트에서 정의</h1>
     <hr>
     <h2>COLORS</h2>
     <pre>
+        <!-- 모두 파란색  -->
         색상명: blue;
-        hex : #0000ff; = #00f; 로 작성해도 같은 결과
-        rgb : rgb(0,0,255);
+        hex(헥사코드) : #0000ff; = #00f; 로 작성해도 같은 결과
         rgb : rgb(0,0,255);
         rgb+투명도 : rgba(0,0,255,0.5);
-        hsl : hsl(240, 100%, 100%);
+        hsl(색조 채도 명도) : hsl(240, 100%, 100%); -> hue, saturation, lightness
         hsl+투명도 : hsla(240, 100%, 100%, 0.5);
     </pre>
     <h3 class="name">name: 색상명</h3>

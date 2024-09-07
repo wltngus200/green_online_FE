@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위의 사용</title>
+    <style>
+        /* pixel */
+        .px{width:200px; background-color: silver;}
+        .px_parent{width: 300px; background-color: silver;}
+        .px_child{width: 100px; background-color: pink;}
+        
+        /* percent */
+        .percent{width: 50%; background-color: greenyellow;}
+        .percent_parent{width:50%; background-color: yellowgreen;}
+        .percent_child{width:50%; background-color: aquamarine;}
+        /* 같은 50%지만 누구를 부모를 두느냐에 따라서 크기가 달라짐 */
+        
+        
+
+        /* 단위 고급 */
+        
+        section{font-size:20px;}
+        /* section에 지정해 주는 순간 아래는 그 크기의 n배가 적용
+        ex. section{font-size:20px;} => section h2{font-size:1em}= 20*1=20 */
+
+        /* hn들은 폰트 사이즈를 지정해 주지 않아도 기본 글씨 크기가 존재 */
+        section h2{
+            font-size: 1em;
+            /* em: em단위가 쓰여진 곳의 폰트사이즈의 배수
+            em을 쓰기 전에 폰트사이즈가 얼마였는가 */
+            /* 기본 폰트 사이즈 16px -> 1em(16*1=16) */
+            /* 부모인 section을 바꾸면 얼마가 되는가 */
+        }
+        section p{
+            font-size: 1em;
+            /* em: em단위가 쓰여진 곳의 폰트사이즈의 배수
+            em을 쓰기 전에 폰트사이즈가 얼마였는가 */
+        }
+        section em{
+            font-size:1.5em;
+            /* p 태그보다 더 큼 p태그의 크기를 상속받아 1.5배를 하기 때문 */
+        }
+
+        /* rem 사이즈 지정 r = root이기 때문에 article을 바꿔도 변화 X */
+        :root{font-size:12px;}
+        article{font-size:1rem; font-size:20px;}
+        article h2{font-size:1.5rem;}
+        article p{font-size:1.5rem;}
+        article em{font-size:1.5rem;}
+    /* 
+        body{height:100%;}
+        html{height:100%;}
+    */
+
+        /* vw vh */
+        /* .vw {width:50vw; background-color: khaki; height:100vh} */
+        .vw {width:20vh; background-color: khaki; height:30vw} vh vw 반대로도 적용 가능
+        /* 스크롤바의 크기도 포함이기 때문에 100을 하면 가로 스크롤 생김 <-> %는 생기지 않음 */
+        /* 100% = 부모가 준 영역을 다 쓴다 .vm -> body -> html */
+        /* 부모까지 다 100% 처리를 하지 않고도 브라우저 높이를 다 사용 가능 한 것이 vh */
+
+    </style>
+</head>
+<body>
+    <h1>단위</h1>
+    <h2 class="px">pixel</h2>
+    <hr><!-- horizontal rule 세로선 -->
+    <!-- div.parent>div.child -->
+    <div class="px_parent">
+        parent
+        <div class="px_child">child</div>
+    </div>
+    <hr>
+    <!-- 부모 요소에서의 비율, 현재의 경우 body -->
+    <h2 class="percent">percent</h2>
+    <div class="percent_parent">
+        parent
+        <div class="percent_child">child</div>
+    </div>
+
+    <hr>
+    <!-- em, rem, vw, vh -->
+    <h2>em</h2>
+    <pre>
+        em단위가 쓰여진 곳의 폰트 사이즈의 배수
+    </pre>
+    <section>
+        <h2>section title</h2>
+        <p>
+            <!-- em 강조 태그 이탤릭(기울어짐) -->
+            <em>Lorem</em> ipsum dolor sit amet, consectetur adipisicing elit. Officiis, nesciunt temporibus! Eos sit molestiae maiores cum facilis, debitis quidem saepe laboriosam labore voluptatibus, assumenda error? Officiis quisquam architecto sed iusto.
+        </p>
+    </section>
+
+    <h2>rem</h2>
+        <pre>
+            r = root = 문서의 기본 단위(=16px)를 의미
+        </pre>
+        <article>
+            <h2>article title</h2>
+            <p>
+                <em>Lorem</em> ipsum dolor sit amet consectetur adipisicing elit. Iste, sed blanditiis! Facilis dignissimos, voluptatibus porro voluptate dolor debitis repellat accusantium quaerat architecto totam enim? Tempore odit molestiae ipsum magnam dicta!
+            </p>
+        </article>
+    
+    
+    <hr>
+    <h2>vw</h2>
+    <pre>
+        v = viewport = 브라우저가 보여주는 순수한 영역(스크롤바 포함)
+    </pre>
+    <div class="vw">vm</div>
+    <h2>vh</h2>
+
+</body>
+</html>
