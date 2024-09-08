@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 기초</title>
+    <style>
+        *{color:green; font-size: 16px;}
+        h1{font-size:1.5em;}
+        h2{font-size:1.2em;}
+        /* 태그 선택자는 태그들끼리 구분이 될 때 */
+        #logo{ background-color: silver;}
+        .title{color: palevioletred}
+        /* .small{font-size:14px;}
+        .color{color:blue;}
+        .bold{font-weight: bold;} */ /* 같은 설정을 class가 아닌 id로 했을 경우 */
+        /* font-weight: 폰트의 굵기를 지정 */
+
+        /* class->id */
+        #effect1{font-size:14px;}
+        #effect2{font-size:14px; color:green;}
+        #effect3{font-size:14px; color:green; font-weight: bold;}
+
+        /* CSS LINT : CSS 코드를 넣었을 때, 최적화 된 코드를 제안 */
+        /* label, input에서 id사용 내부 링크에도 id 사용 CSS에서는 지양 */
+    </style>
+</head>
+<body>
+    <!-- ID는 딱 한 요소에만 적용 -->
+    <h1 id="logo">Heading 1</h1>
+    <!-- 태그명 선택=h1, ID선택=#logo -->
+    <h2>Heading 2</h2>
+    <h2 class="title">Heading 2</h2> 
+    <h2 class="title">Heading 2</h2>
+    <!-- class 선택자 =.title -->
+    <p class="small" id="effect1">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis quam, voluptate officiis aliquid sit distinctio itaque debitis non beatae illo suscipit molestiae eaque saepe quis obcaecati? Beatae, dolor aperiam?
+    </p>
+    <!-- 2개 이상의 class는 스페이스바로 구분 -->
+    <p class="small color" id="effect2">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis quam, voluptate officiis aliquid sit distinctio itaque debitis non beatae illo suscipit molestiae eaque saepe quis obcaecati? Beatae, dolor aperiam?
+    </p>
+    <p class="small color bold" id="effect3">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates perferendis quam, voluptate officiis aliquid sit distinctio itaque debitis non beatae illo suscipit molestiae eaque saepe quis obcaecati? Beatae, dolor aperiam?
+    </p>
+</body>
+</html>

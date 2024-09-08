@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 2</title>
+    <style>
+        /* 자손 선택자 */
+        /* header h1{background-color: silver;} */
+        /* 자손 선택자를 사용함으로 인해 section 아래의 class="title"은 무시됨 */
+        header .title{background-color: silver;}
+
+        /* 자식 선택자 */
+        /* nav ul li a{background-color: silver;} */
+        /* sub-menu를 제외하고 menu만 바뀌길 원함 */
+        /* nav ul li>a{background-color: silver;} */
+        /* nav ul로 인해 모든 자손 중 ul(sub-menu의 ul) 선택 */
+        nav>ul>li>a{background-color: silver;}
+        /* ul li를 하면 sub-menu가 적힌 li도 선택 */
+
+        /* 형제 선택자 1 인접 형제 선택자 = 같은 레벨에서 바로 아래 것 선택*/
+        /* section ul{background-color: silver;} */
+        /* section 태그 아래의 모든 리스트를 선택하게 됨 */
+        section h1+ul{background-color: silver;}
+
+        /* 형제 선택자 2 일반 형제 선택자 = 같은 레벨의 아래에 해당하는 것 모두 */
+        section h2~ul{background-color: silver;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">Logo</h1>
+        <!-- nav>ul>li*3 -->
+        <nav>
+            <ul>
+                <li><a href="">Menu</a>
+                    <!-- ul>li*2>a{sub-menu} -->
+                    <ul>
+                        <li><a href="">sub-menu</a></li>
+                        <li><a href="">sub-menu</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Menu</a></li>
+                <li><a href="">Menu</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1 class="title">Main section</h1>
+        <!-- ul>li*3{menu$} -->
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+        </ul>
+        <h2>Main title</h2>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+        </ul>
+        <h3>sub title</h3>
+        <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+        </ul>
+    </section>
+</body>
+</html>
