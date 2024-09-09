@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 고급2</title>
+    <style>
+        /* 첫 번째, 마지막에 밑줄 = 그룹 선택자 */
+        ul li:first-child, ul li:last-child{text-decoration: underline;}
+        ul li:nth-child(3){text-decoration: underline;}
+        /* 괄호 안에 수식 넣기 가능 n=0부터 시작*/
+        /* li:nth-child(2n){background-color: silver;}
+        li:nth-child(2n+1){background-color: lavender;} */
+        /* 짝수 even 홀수 odd */
+        li:nth-child(even){background-color: silver;}
+        /* 수식의 다양한 적용 방법 */
+        /* li:nth-child(n+3){background-color: lavender;} 3 이상 */
+        /* li:nth-child(-n+5){background-color: lemonchiffon;} 5 이하 */
+        /* 수식간의 교집합 */
+        li:nth-child(n+3):nth-child(-n+5){background-color:pink}
+
+        /* 첫 번째 h3만 선택 */
+        /* h3:first-child{background-color: silver;} body를 기준으로 판단되기 때문에 안 됨*/
+        h3:first-of-type{background-color: silver;}
+
+        input:disabled{border-color: black;}
+        /* 체크란 자체는 못 바꿈, 따라서 뒤의 라벨을 선택 */
+        input:checked{background-color: red;}
+        input:checked+label{background-color: blue;}
+
+        /* 부정 선택자 not */
+        section *:not(h2){color:green;}
+        .list li:not(:first-child){color:blue;}
+    </style>
+</head>
+<body>
+    <h1>CSS selector</h1>
+    <h2>일반 구조 선택자</h2>
+    <!-- ul>li*5{list item$} -->
+    <ul>
+        <li>list item1</li>
+        <li>list item2</li>
+        <li>list item3</li>
+        <li>list item4</li>
+        <li>list item5</li>
+        <li>list item6</li>
+    </ul>
+
+    <hr>
+    <h2>형태 구조 선택자</h2>
+    <h3>subtitle</h3>
+    <h3>subtitle</h3>
+    <h3>subtitle</h3>
+    <div>contain</div>
+    <h3>subtitle</h3>
+
+
+    <hr>
+    <h3>상태 선택자</h3>
+    <form action="">
+        <input type="text" disabled>
+        <input type="text">
+        <input type="radio" id="radio"><label for="radio">radio</label>
+        <input type="checkbox" id="check"><label for="check">checkbox</label>
+        <!-- disabled를 하면 브라우저에서 흐리게 표현 클릭이 되지 않음 -->
+        <button type="submit" disabled>전송</button>
+        <button type="reset">초기화</button>
+    </form>
+    <hr>
+    <h3>부정 선택자</h3>
+    <section>
+        <!-- 이 태그 내에서 제목을 제외한 모든 것 선택 -->
+        <h2>section title</h2>
+        <p>description</p>
+        <a href="">read more</a>
+        <img src="http://placehold.it/100x100" alt="">
+        <!-- ul>li*5{list item} -->
+    </section>
+    <!-- 리스트에서 첫번째 제외하고 나머지 선택 -->
+    <ul class="list">
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere totam rerum adipisci, aliquid atque quae incidunt, dicta placeat autem similique nisi blanditiis, ad fugiat accusamus obcaecati nemo maxime! Recusandae, hic!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere totam rerum adipisci, aliquid atque quae incidunt, dicta placeat autem similique nisi blanditiis, ad fugiat accusamus obcaecati nemo maxime! Recusandae, hic!
+    </p>
+</body>
+</html>
