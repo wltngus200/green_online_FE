@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 웹폰트 로더 API docs > web font loader > github -->
+    <!-- 웹폰트 로딩보다 속도가 빠름 웹폰트는 많으면 딜레이가 발생(웹 폰트는 최소로 유지) -->
+    <title>font3</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+        google: {
+            // 자바스크립트에서는 전부 작은 따옴표나 큰 따옴표로 감싸주어야 함
+            families: ["Nanum Brush Script", 'cursive','Nanum Gothic:400, 800']
+                                                                    // 굵기 지정 
+        /* 두께를 지정하고 싶고 그 두께가 CSS의 기본 설정으로 커버가 안 되면, 콜론하고 숫자 */
+        }
+        });
+    </script>
+
+    <style>
+        body{font-family: 'Nanum Gothic', sans-serif; font-weight: 800;}
+       .target{font-family:'Nanum Brush Script', 'cursive';}
+    </style>
+    <!-- 내부서버(font-family) : 서버가 내 호스팅에 있어서 외부 상황에 따라 출력문제는 발생하지 않지만, 용량이 클 경우 트래픽 부담
+         외부서버(cdn) : 외부에서 불러오기 때문에 자체 트래픽 소모가 없지만, 외부 서버에 문제 발생시 출력 되지 않음 -->
+</head>
+<body>
+    <h1>폰트 적용하기</h1>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque fuga aliquid labore nesciunt id delectus blanditiis nam voluptatum, corporis eveniet repudiandae eligendi error aspernatur vitae, cupiditate ab voluptas, quo fugit.
+    </p>
+    <p class="target">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident numquam quia maxime eos aut mollitia modi, ex corporis officiis voluptatem illo enim officia dignissimos perferendis, quidem ipsam fuga! Eveniet, incidunt.
+    </p>
+</body>
+</html>

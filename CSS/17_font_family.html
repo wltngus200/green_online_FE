@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font</title>
+    <!-- 코딩에 용이한 웹폰트를 사용하는 것이 좋음 -->
+    <!-- 시스템 폰트는 해당 폰트가 없는 유저에게는 해당 폰트 출력 불가 -->
+    <!-- 웹폰트는 설정 경로로 브라우저에 해석 되어서 폰트를 보여줌 -->
+    <!-- 파일로 된 폰트 직접 적용 -->
+    <style>
+        @font-face {
+            /* 로드하고자 하는 폰트, 이 폰트를 뭐라고 부를 지, 여기 적은 걸 글씨체 이름으로 사용 */
+            font-family: 'Nanum Gothic';
+            /* woff는 웹폰트 format은 확장자 */
+            src: url(fonts/NanumGothic.woff) format('woff');
+            /* ttf는 트루타입 폰트 */
+            src: url(fonts/NanumGothic.ttf) format('truetype');
+        }
+        body{
+            /* font-family로 설정한 이름을 그대로 적용 */
+            /* font-family : 'Nanum Gothic',sans-serif; */
+            font-family: '돋움', dotum, helvetica, sans-serif;
+        } 
+        .target{font-family:'Nanum Gothic',sans-serif;}
+        /* helvetica: mac에서의 기본 폰트 */
+    </style>
+</head>
+<body>
+    <h1>폰트 적용하기</h1>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque fuga aliquid labore nesciunt id delectus blanditiis nam voluptatum, corporis eveniet repudiandae eligendi error aspernatur vitae, cupiditate ab voluptas, quo fugit.
+    </p>
+    <p class="target">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident numquam quia maxime eos aut mollitia modi, ex corporis officiis voluptatem illo enim officia dignissimos perferendis, quidem ipsam fuga! Eveniet, incidunt.
+    </p>
+</body>
+</html>
