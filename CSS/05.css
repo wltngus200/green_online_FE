@@ -1,0 +1,24 @@
+/* 위의 CSS보다 아래에 있음 = 우선 순위 높음 */
+.bx-wapper{-webkit-box-shadow:none; box-shadow: none; border:2px solid silver;}
+
+.slide{height:300px;}
+/* !important 가장 우선 순위를 가짐
+    다른 라이브러리에서 적용할 경우 ex.bxSlider */
+#desc{color:silver !important;}
+#desc{color:#3498db !important;}
+/* 위에 있으나, 구체적으로 적었기 때문에 우선순위가 높음 */
+.main-content p{color:red;}
+.main-content p{color:black;}
+/* 동일한 우선 순위를 가질 경우 아래에 있는 것이 우선 */
+p{color:blue;}
+p{color:green;}
+
+.blank{height:500px;}
+
+
+
+/* background, font의 속성을 한 번에 작성 */
+/* font-size, font-style, font-weight... */
+section h2{font-size:40px;}
+
+section h2{font:bold;}

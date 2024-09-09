@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>우선 순위</title>
+    <!-- slider -->
+    <!-- 로드 한 것을 주석처리 하면 기능은 유지하면서 CSS를 없앨 수 있다 -->
+    <!-- 개발자도구 style에 표시되는 webkit은 하위브라우저, 지원하지 않는 브라우저에서 앞에 붙이는 접두사 (밴더 프리픽스) -->
+    <!-- 아래 링크에 소스가 존재하기 때문에 우리가 소스 코드를 설정하지 못함, 우선 순위를 키워야 함 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".slide_container").bxSlider();
+        });
+        </script>  
+    <!-- 아래에 위치 -->
+    <link rel="stylesheet" href="05.css">
+    <!-- 05.CSS로 이전  -->
+    
+</head>
+<body>
+    <h1>CSS 우선순위</h1>
+    <section class="main-content">
+        <h2>section title</h2>
+        <pre>
+            우선 순위 가상 점수
+                * 0
+                tag 1
+                class 10
+                id 100
+                inline style 1000
+                ! important 10000
+        </pre>
+        <p id="desc" style="color:blue">
+            <!-- inline: css에서 해당 항목을 수정할 수 없다 -->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati provident hic aliquid maiores dolorum, incidunt voluptatibus repellat! Reiciendis debitis libero vel esse, cumque laudantium similique corrupti nam quo accusamus placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat esse laboriosam ipsam odio ratione inventore sunt nesciunt mollitia dolore quam! Dicta explicabo quo dolorum officia consequatur, tempora quia aliquid repudiandae!
+        </p>
+    </section>
+    <section>
+        <h2>section title2</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati provident hic aliquid maiores dolorum, incidunt voluptatibus repellat! Reiciendis debitis libero vel esse, cumque laudantium similique corrupti nam quo accusamus placeat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat esse laboriosam ipsam odio ratione inventore sunt nesciunt mollitia dolore quam! Dicta explicabo quo dolorum officia consequatur, tempora quia aliquid repudiandae!
+        </p>
+    </section>
+    <hr>
+    <!-- div.slide_wrapper -->
+    <div class="slider_wrapper">
+        <!-- div.slide_container -->
+        <div class="slide_container">
+            <!-- 클래스명 복사해서 bxslider에 넣기 -->
+            <div class="slide">slide 1</div>
+            <div class="slide">slide 2</div>
+            <div class="slide">slide 3</div>
+            <div class="slide">slide 4</div>
+        </div>
+    </div>
+    <div class="blank"></div>
+</body>
+</html>
