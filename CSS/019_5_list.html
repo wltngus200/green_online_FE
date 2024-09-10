@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list style</title>
+    <style>
+        nav>ul>li{list-style-type:square;}
+        nav>ul>li>ul>li{list-style-type:disc;}
+                            /* 줄여쓰기 */
+        nav>ul>li>ul>li>ul>li{list-style:decimal;}
+        
+        /* ol {list-style-type:'-';} */
+        /* 내 나름의 응용 */
+        /* ol :nth-child(2n){list-style-type:'★';}
+        ol :nth-child(2n+1){list-style-type:'☆';} */
+        /* https://symbl.cc/kr/unicode-table/ */
+        /* 이모지 아이콘 백슬래시(\)를 넣고 코드 입력 */
+        ol {list-style-type:'\1F42C';}
+        /* 그냥 텍스트로 넣겠다면 &로 시작하는 걸 넣어도 되지만 코드상에서는 적용 X */
+        
+        </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>menu</li>
+            <li>menu
+                <ul>
+                    <li>sub menu</li>
+                    <li>sub menu
+                        <ul>
+                            <li>sub menu2</li>
+                            <li>sub menu2</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>menu</li>
+            <li>menu</li>
+        </ul>
+    </nav>
+    <hr>
+    <!-- 문자도 가능 -->
+    <ol>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+    </ol>
+    <hr>
+    <ul>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+        <li>menu</li>
+    </ul>
+    <p>&#127813;</p>
+</body>
+</html>
