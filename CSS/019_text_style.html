@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text</title>
+    <style>
+        h1,h2{border:1px solid; width:80%; margin:20px auto;}
+        /* 들여쓰기 */
+        h1{text-indent: 20px;}
+        /* 내어쓰기 */
+        h2{text-indent: -20px;}
+        
+        h1 a{
+            text-indent:-100px;
+            /* a 태그는 인라인이라서 자기가 얼마인질 모름 */
+            display:block; 
+            /* 넘쳐 흐르는 요소를 보이지 않게 설정 */
+            overflow: hidden;
+            /* + 백그라운드 속성을 활용해 글자 대신 사진을 띄우게 함 */
+        }
+    </style>
+</head>
+<body>
+    <!-- indexing : 검색engine이 tag 안의 content들을 가져가 목록화 -->
+    <h1><a href="index.html">Logo</a></h1>
+    
+    <h2>Content title</h2>
+</body>
+</html>

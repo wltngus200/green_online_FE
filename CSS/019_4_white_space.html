@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>white space</title>
+    <style>
+        /* 가변적인 테두리 설정 */
+        p {width:60%; border: 1px solid #ccc;}
+        p.nowrap{white-space: nowrap;}
+        p.normal{white-space: normal;}
+        /* 내가 남긴 스페이스, 엔터를 그대로 보존 */
+        /* p.pre{white-space: pre;} 넘친 엔터를 내리지 않음 */
+        /* p.pre{white-space: pre-line;} 엔터는 유지하지만 스페이스를 버림 */
+        p.pre{white-space: pre-wrap;} 
+    </style>
+</head>
+<body>
+    <h2>white-space: nowrap:</h2>
+    <p class="nowrap">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque suscipit quia similique molestiae error quasi nam explicabo iure distinctio reiciendis omnis blanditiis dignissimos odit quod, eveniet iusto, illo cum placeat?
+    </p>
+    
+    <h2>white-space: nowrap:</h2>
+    <p class="normal">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque suscipit quia similique molestiae error quasi nam explicabo iure distinctio reiciendis omnis blanditiis dignissimos odit quod, eveniet iusto, illo cum placeat?
+    </p>
+
+    <h2>white-space: nowrap:</h2>
+    <p class="pre">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        
+        Eaque suscipit quia similique molestiae error quasi nam explicabo iure distinctio reiciendis omnis blanditiis 
+        
+        
+        dignissimos odit quod, eveniet iusto, illo cum placeat?
+    </p>
+
+</body>
+</html>
