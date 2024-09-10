@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자간 설정</title>
+    <style>
+        /* 0은 기본 값, 음수를 주게 되면 글자가 겹침 */
+        h2{letter-spacing: 10px;}
+        h3{word-spacing: 10px;}
+        /* 줄과 줄 사이의 빈 공간이 아닌 줄 그 자체의 높이 */
+        p{line-height: 40px;}
+        /* a는 인라인 요소이기 때문에 크기가 잘 반영이 안 됨 */
+        /* 높이를 40줬기 때문에 line-height도 같은 값 세로에서 센터를 차지함 */
+        a{background: #ccc; height: 40px; display: inline-block; padding: 0 10px; line-height: 40px;}
+    </style>
+</head>
+<body>
+    <h1>간격</h1>
+    <h2>letter spaching</h2>
+    <h3>word spacing</h3>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos error eveniet ad, facilis sed sapiente consectetur aliquam amet commodi in deserunt ipsum aut repellat ipsam libero facere expedita possimus culpa?
+    </p>
+    <a href="">read more</a>
+</body>
+</html>

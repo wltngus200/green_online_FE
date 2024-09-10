@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폰트 스타일</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body{font-family:'Roboto', sans-serif;}
+        :root{font-size: 20px;}
+        body{font-size: 16px;}
+        /* 기본 폰트는 xx-small을 지원하지 않음 */
+        .xx-small{font-size:xx-small;}
+        .x-small{font-size:x-small;}
+        .small{font-size:small;}
+        .normal{font-size:medium;}
+        .large{font-size:large;}
+        .x-large{font-size:x-large;}
+        .xx-large{font-size:xx-large;}
+        /* 정확한 픽셀 사이즈를 알기 어렵기 때문에 다른 방식을 추천 */
+
+        .px{font-size: 30px;}
+        .percent{font-size: 100%;}/*16px*/
+        /* pxtoem.com */
+        /* 현재 적용된 폰트 사이즈의 2배 */
+        .em{font-size: 2em;}
+        .rem{font-size: 2rem;}
+        /* 브라우저 가로길이에 비례 계속 바뀌기 때문에 브라우저 크기를 아는 모바일에 적합 */
+        .vw{font-size: 10vw;}
+
+        /* font-weight */
+                    /* fw100 */
+        .weight1{font-weight: 100;}/* thin */
+        .weight5{font-weight: 500;}
+        .weight7{font-weight: 700;}
+
+        /* 지원여부는 폰트의 특징에 따라 다름 */
+        .thin{font-weight:thin;}
+        .light{font-weight:light;}
+        .normal{font-weight:normal;}
+        .medium{font-weight:medium;}
+        .bold{font-weight:bold;}
+
+        /* style */
+                /* tdnone */
+        .none{text-decoration: none;}
+        .underline{text-decoration: underline;}
+        .overline{text-decoration: overline;}
+        .line_through{text-decoration: line-through;}
+        .dotted{text-decoration: underline dotted red;}
+        .dashed{text-decoration: underline dashed red;}
+        .wavy{text-decoration: underline wavy red;}
+                                                /* solid : 실선 */
+        .both{text-decoration: underline overline solid red;}
+        /* 글씨와 선의 간격을 조절하지 못 하기 때문에 후에 border를 사용 */
+
+        .style {font-style:italic;}
+        em, address{font-style: normal;}
+    </style>
+</head>
+<body>
+    <h1>글 스타일</h1>
+    <h2>글자 크기</h2>
+    <p class="xx-small">xx-small</p>
+    <p class="x-small">x-small</p>
+    <p class="small">small</p>
+    <p class="medium">medium</p>
+    <p class="large">large</p>
+    <p class="x-large">x-large</p>
+    <p class="xx-large">xx-large</p>
+    <p class="px">font-size</p>
+    <p class="percent">font-size percent</p>
+    <p class="em">font-size em</p>
+    <p class="rem">font-size rem</p>
+    <p class="vw">font-size vw</p>
+
+    <hr>
+    <h2>글자 두께</h2>
+    <!-- p.weight1 -->
+    <p class="weight1">font-weight: 100</p>
+    <p class="weight5">font-weight: 500</p>
+    <p class="weight7">font-weight: 700</p>
+
+    <!-- p.light -->
+    <p class="thin">thin</p>
+    <p class="light">light</p>
+    <p class="normal">normal</p>
+    <p class="medium">medium</p>
+    <p class="bold">bold</p>
+    <p class="bolder">bolder</p>
+    <hr>
+    <h2>글자 장식</h2>
+    <!-- p.none -->
+    <p class="none">none</p>
+    <p class="underline">underline</p>
+    <p class="overline">overline</p>
+    <p class="line_through">line_through</p>
+    <p class="dotted">dotted</p>
+    <p class="dashed">dashed</p>
+    <p class="wavy">wavy</p>
+    <p class="both">both</p>
+    <hr>
+    <h2 class="style">글자 스타일</h2>
+    <p>
+        Lorem ipsum <em>dolor sit</em> amet consectetur adipisicing elit. Ducimus facilis delectus praesentium labore in. Recusandae neque rem hic odio nobis. Excepturi est dolorum consequatur consectetur officia quia fuga magni numquam.
+        <address>
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque repudiandae modi ea tempore, voluptatum iste dicta voluptates eius est, aperiam eaque facilis quibusdam deleniti maxime quo perferendis? Quae, nisi consequatur!
+            </p>
+        </address>
+    </p>
+    
+
+</body>
+</html>
