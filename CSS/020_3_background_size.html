@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background size</title>
+    <style>
+        .bg{width:400px; height:300px;  border: 1px solid; 
+            
+            /* background-image: url('img/bg.JPG'); background-repeat: no-repeat;background-color: silver;
+            background-position: 50% 50%; background-size: 100% 100%; */
+
+            background:silver url('img/bg.JPG') no-repeat 50% 50% / 100% 100%
+            /* 다른 요소는 상관 없으나 position과 size는 순서를 지키면서 슬래시로 구분 */
+    }
+
+
+        /* 수치를 하나만 적은 것은 가로 값을 지정, 세로는 비율에 맞게 알아서 늘어남 */
+        /* 아래에서 background: 200px 등 속성을 줘 버리면 초기화 됨, 특정값을 언급해야 함 */
+        .size1{background-size: 200px;}
+        /* 부모의 크기가 바뀌면 전체 너비를 커버 */
+        .size2{background-size: 100%;}
+        /* 가득 채우려 하기 때문에 이미지의 비율이 깨짐 */
+        .full{background-size:100% 100%;}
+        /* 높이는 늘어나되, 가로는 이미지 비율대로 적용 */
+        .contain{background-size: contain;}
+        /* 너비에 포커스를 맞춰서 설정됨; 중앙정렬을 맞춰 줌 */
+        .cover{background-size: cover; background-position: center;}
+
+        /* 100%와 cover의 차이는 부모의 크기가 유동적일 때 나타남
+        100% : 무조건 가로와 세로를 다 채움
+        cover : 이미지 기본 사이즈보다 줄지 않음 */
+        .fluid{width:50%}
+        /* 100%는 비율을 깨면서 사이즈를 모두 채우고, 
+        cover는 비율이 깨지지 않게하면서 공간을 채움 */
+    </style>
+</head>
+<body>
+    <h1>background size</h1>
+    <h2>default auto</h2>
+    <div class="bg"></div>
+    <h2>가로측 200px</h2>
+    <div class="bg fluid size1"></div>
+    <h2>가로측 100%</h2>
+    <div class="bg fluid size2"></div>
+
+    <hr>
+
+    <h2>100% 100%</h2>
+    <div class="bg fluid full"></div>
+    <h2>contain</h2>
+    <div class="bg fluid contain"></div>
+    <h2>cover</h2>
+    <div class="bg fluid cover"></div>
+</body>
+</html>
