@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow</title>
+    <style>
+        div{width:400px; border: 1px solid #ebebeb;}
+        div p{width:450px;}
+
+
+        /* 넘치는 방향으로 스크롤 생성 */
+        .auto{overflow: auto;}
+        /* 넘치는 부분을 보이지 않게 함 */
+        .hidden{overflow: hidden;}
+        /* auto와 비교하기, 가로 세로 모두 스크롤바가 생김 */
+        .scroll{overflow: scroll;}
+        /* 가로의 스크롤을 어떻게 할 지 기본값(visible)=넘치는 걸 그대로 보여줌 */
+        .overflow-x{overflow: visible;}
+                                    /* 부모에게 높이를 지정 */
+        .overflow-y{overflow: auto; height:80px; overflow-x: hidden; overflow-y: scroll;}
+        .overflow-y p{width: auto; height :150px;}
+    </style>
+</head>
+<body>
+    <h1>overflow</h1>
+    <div>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab pariatur doloremque quidem exercitationem possimus voluptates animi officiis laudantium rem tenetur aliquam, aliquid iste sapiente excepturi dolor, odit dignissimos assumenda eius.
+        </p>
+    </div>
+        
+    <h2>auto</h2>
+    
+    <div class="auto">
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga atque deserunt, rerum dignissimos, voluptates recusandae ullam facilis dolorum vel ducimus, quidem quasi non nihil esse ea soluta facere tempora. Voluptas.
+        </p>
+    </div>
+
+    <h2>hidden</h2>
+
+    <div class="hidden">
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem vero consectetur officia maiores deleniti, similique voluptatum laudantium harum, labore dolore voluptatibus ipsa debitis assumenda ipsam doloremque eveniet odit eligendi quibusdam.
+        </p>
+    </div>
+
+    <h2>scroll</h2>
+
+    <div class="scroll">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet voluptatum sequi dicta culpa error, eum eaque doloribus atque reiciendis labore, fugiat vel exercitationem non pariatur sunt. Harum, a culpa.
+        </p>
+    </div>
+
+    <h2>overflow-x</h2>
+    
+    <div class="overflow-x">
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat id voluptates eos maiores, ducimus distinctio ut accusamus? Perspiciatis culpa inventore atque sed, quam quae soluta ab delectus corrupti aperiam quidem.
+        </p>
+    </div>
+
+    <h2>overflow-y</h2>
+    <div class="overflow-y">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus commodi quibusdam eligendi nemo quasi aspernatur quis labore assumenda veritatis, expedita neque nostrum sit nihil, perspiciatis exercitationem reprehenderit quo ea ratione?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus commodi quibusdam eligendi nemo quasi aspernatur quis labore assumenda veritatis, expedita neque nostrum sit nihil, perspiciatis exercitationem reprehenderit quo ea ratione?
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus commodi quibusdam eligendi nemo quasi aspernatur quis labore assumenda veritatis, expedita neque nostrum sit nihil, perspiciatis exercitationem reprehenderit quo ea ratione?
+        </p>
+    </div>
+
+</body>
+</html>
