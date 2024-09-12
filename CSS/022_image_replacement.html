@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image replacement</title>
+    <style>
+        h1 a{background: url('img/logo.JPG') no-repeat; width: 65px; height: 65px; 
+            /* 들여쓰기로 이미지 옆으로 나오게 이동, 2줄로 나오는 것을 한 줄로 나오게 변경 */
+            text-indent: 65px; white-space: nowrap; overflow: hidden; display: block;}
+                                            /* 영역 밖 나온 것 보이지 않게 = h1 태그 전체를 해버리면 a태그를 없애 버림 */
+    ul li{list-style:none; display:inline-block;}
+    ul li a{background: url(img/icon.JPG) no-repeat; width: 32px; height: 32px; display: block; text-indent:-9999em}
+    /* 포토샵(그림판)으로 크기 확인 */
+
+    /* background-position으로 위치 조절 */
+    /* x와 y의 값 별도로도 지정 가능 */
+    ul li:nth-child(1) a{background-position-x: -8px;
+                            background-position-y:-5px;}
+    
+    ul li:nth-child(2) a{background-position: -41px -5px;}
+    ul li:nth-child(3) a{background-position: -75px -5px;}
+    /* x축으로 끝부분일 경우 100%도 가능 */
+    ul li:nth-child(4) a{background-position: -108px -5px;}
+    /* 네이버의 경우
+    로고의 글씨 : 마스크 clip: rect, position: absolute(띄움), width, height 1px씩하고 margin -1(컨텐츠 넘침), overflow: hidden(넘친 부분 감춤) 
+    그림 : ::before(인라인 요소), content를 비워 빈 공간, 크기 설정 -> inline-block으로 설정, vertical-align:top으로 위치 조정, background-position 배경   
+    */
+    
+    /* 마우스를 올렸을 때 바뀜 */
+    /* ul li:nth-child(1) a:hover{background-position: -8px -40px;}
+    ul li:nth-child(2) a:hover{background-position: -41px -40px;}
+    ul li:nth-child(3) a:hover{background-position: -75px -40px;}
+    ul li:nth-child(4) a:hover{background-position: -108px -40px;} */
+    ul li a:hover{background-position-y: -40px;}
+    </style>
+</head>
+<body>
+                        <!-- 웹 접근성 -->
+    <h1><a href="index.html">Sharp Logo</a></h1>
+    <hr>
+    <ul>
+        <li><a href="">Add Member</a></li>
+        <li><a href="">Mail to Member</a></li>
+        <li><a href="">Member information</a></li>
+        <li><a href="">Delete Member</a></li>
+    </ul>
+</body>
+</html>
