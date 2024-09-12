@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box model</title>
+    <style>
+        .box{width:500px;}
+        /* 총 너비는 540이 된다 */
+        .padding{padding:20px;}
+        /* 총 너비가 560이 된다 */
+        .border{border: 10px dashed silver;}
+        /* 너비가 변화가 없다 하지만 화면상에 약간씩 여백이 생김 */
+        .margin{margin:10px;}
+        /* 요소가 차지하는 공간(border)까지 색이 채워진다 */
+        .bg{background: green; color:white}
+
+        /* box-sizing */
+        /* 기본값 */
+        .content-box{box-sizing: content-box;}
+        /* 우리가 지정한 너비 안 쪽으로 border와 padding을 만듦  */
+        .border-box{box-sizing: border-box;}
+
+        /* box2 = 각 방향 지정 */
+        .box2{
+            /* border:1px solid green; width: 500px;  */
+            /* border-width: 10px 30px 50px 5px; */
+            /* border-width:0; */
+            border-width:10px;
+            /* border-top-width:10px; */
+
+            /* border-style: solid dotted dashed; */
+            /* border-top-style: solid; */
+            border-style:solid;
+
+            /* border-color:green silver; */
+            border-color:green;
+
+            /* padding:10px 50px 100px 20px; */
+            /* padding: 0 50px 0 0; */
+            padding-right: 50px;
+                
+            /* margin */
+            /* margin: 50px 100px 200px; */
+            
+            margin-bottom:50px;
+            margin-top: 50px;
+
+            /* 모든 요소는 왼쪽 상단으로 향하고자 하는 성질이 있음 */
+            /* left나 top을 주면 다른 요소나 바깥쪽으로 침범함(스크롤바가 생기지는 x) */
+            margin-bottom:50px;
+            /* margin-right:-250px; */
+            /* right를 마이너스로 주게 되면 뒤의 요소에게 영향을 줌 */
+            margin:0 auto; /* 0은 생략 가능 */
+            /* 너비가 있으면 브라우저 크기에 상관 없이 가운데 차치하게 됨 */
+            display: inline-block
+        }
+        h3{display: inline-block;}
+
+        /* 
+        모든 설정은 꼭지점에서 시계방향으로 돌아가면서 지정
+            1개 : All
+            2개 : top+bottom, left+right
+            3개 : top, left+right, bottom
+            4개 : top, right, bottom, left
+        */
+        </style>
+</head>
+<body>
+    <h1>Box Model</h1>
+    <h2>content</h2>
+    <div class="box content">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium ipsam fugiat autem deleniti. Voluptates nihil exercitationem quisquam, quod provident quos neque enim! Blanditiis eaque corporis minima voluptatem saepe facere reiciendis.
+        </p>
+    </div>
+    <div class="box padding">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit sunt eveniet in, molestiae ut, recusandae autem obcaecati perferendis ad vitae, ullam aperiam incidunt minima officia earum temporibus quam porro aliquam.
+        </p>
+    </div>
+    <div class="box padding border">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla rerum labore eveniet quisquam in! Quam, saepe inventore totam est consequuntur, nihil quos ut ex quisquam nam et repellendus doloribus provident.
+        </p>
+    </div>
+    <div class="box padding border margin">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quod, quibusdam at perferendis ducimus veritatis ipsum totam libero labore incidunt explicabo quo quis, accusantium magnam similique, delectus maxime reprehenderit fuga.
+        </p>
+    </div>
+    <div class="box padding border margin bg">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero reprehenderit aperiam tempore numquam similique? Deserunt culpa inventore commodi praesentium odio quibusdam ut quae laboriosam error animi qui quis, aliquid exercitationem.
+        </p>
+    </div>
+
+    <hr>
+
+    <div class="box padding border margin content-box">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat quasi sint ipsa! Officia dolorum omnis, id distinctio accusantium, facere voluptas similique possimus odit, temporibus minus nostrum ipsam fugit debitis? Molestiae.
+        </p>
+    </div>
+    <div class="box padding border margin border-box">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam tenetur fuga consequuntur sit voluptatum commodi provident quae numquam, eaque aspernatur, totam tempore ab, doloremque laboriosam. Ipsam cumque corporis ullam praesentium.
+        </p>
+    </div>
+
+    <hr>
+    <!-- div.box2 -->
+    <div class="box box2">
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores ullam, quia doloribus animi rem voluptas. Cum ad, nostrum aliquam dolore, excepturi recusandae optio adipisci itaque quae esse atque perspiciatis error?
+        </p>
+    </div>
+    <h3>title</h3>
+</body>
+</html>
