@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 응용</title>
+    <style>
+        *{margin:0; padding:0;} /* 간단한 방식의 기본 설정 reset */
+        .portfolio_list, .portfolio_list2{width:860px; margin:20px auto; padding:10px; background: green; list-style-type: none;}
+        .portfolio_list li, .portfolio_list2 li{float:left;}
+        /* 2번째 마다(앞에 li가 있는 요소만 선택=2, 3, 4 선택) */
+        .portfolio_list li+li{margin-left: 20px;}
+        /* (위와 같음)마지막을 제외하고 오른쪽에 20의 마진 */
+        /* .portfolio_list li:not(:last-child){margin-right:20px;} */
+        /* 같은 조건을 가진 CSS문을 하나로 통합 */
+        .clearfix::after{content:''; display: block; clear:both;}
+        .portfolio_list2 li{margin-right:20px;}
+        /* 4번째, 8번째에 만들면 안 됨 */
+        .portfolio_list2 li:nth-child(4n){margin-right:0;}
+
+        /* header */
+        header{width: 1130px; margin: 0 auto; background:#ebebeb}
+
+        header h1{float:left; line-height: 70px;}
+        /* h1 요소에는 위 아래에 margin이 기본적으로 들어감 -> reset 필요 */
+        /* header nav에 float:right를 주면 X h1=block 요소  */
+        /* header nav ul li의 float:right로 설정하면 메뉴가 역순으로 정렬됨 */
+        /* css는 큰 것에서 작은 것으로 적용 */
+        header nav{float:right;/* float은 content의 너비가 자동으로 인식 별도로 너비 지정할 필요 X 메뉴의 너비는 절대 불변이 아님 */}
+        /* 왼쪽에 불필요한 여백이 있어도 레이아웃상 문제 없음, 높이를 헤더 바와 똑같이 */
+        header nav ul li{float:left; list-style: none; margin-left:20px; line-height: 70px;}
+        /* 만약 nav가 없어서 ul에도 float속성이 걸려있다면 알아서 인지하기 때문에 clear는 필요 없다 */
+        
+    </style>
+</head>
+<body>
+    <!-- 부모의 높이 또한 제대로 적용되는 플롯 리스트 만들기 -->
+    <h1>Portfolio List</h1>
+    <ul class="portfolio_list clearfix">
+        <!-- li는 block요소 -->
+        <li><img src="http://placehold.it/200X200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+    </ul>
+
+    <ul class="portfolio_list2 clearfix">
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+        <li><img src="http://placehold.it/200x200" alt=""></li>
+    </ul>
+    <hr>
+    <header class="clearfix">
+        <h1><a href="">Logo</a></h1>
+        <nav>
+            <ul class="clearfix">
+                <li><a href="">Login</a></li>
+                <li><a href="">Member Join</a></li>
+                <li><a href="">Site Map</a></li>
+                <li><a href="">Location</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
