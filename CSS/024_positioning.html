@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포지셔닝 기법</title>
+    <style>
+        /*
+            float이 적용된 요소가 해당 방향으로 이동한다.
+        */
+        h1{float:right;}
+
+            /* span = inline 요소 float 설정 시 크기 적용 */
+            /* float: 그 요소를 배치한다. 배치는 그 요소에 크기가 있음을 전제로 함 */
+        /* float이 적용된 요소의 크기는 content의 크기만큼 인지된다.(inline 요소에도 크기 지정) */
+        body>span{width:300px; background: #ccc; float: right;}
+            
+        /* 
+            float이 적용된 요소를 뒤따라 오는 요소들이 감싼다.
+            감싸는 속성을 해지(clear)해야 뒤의 요소들을 다시 배치할 수 있다.
+        */
+        body>img{float:left;}
+        .clear{clear:left;}
+        
+        /* 
+            자식 요소 모두 플롯이 적용되면, 부모요소의 높이가 잡히지 않는다.(현재 p태그의 높이=0)
+            감싸는 속성을 해지(clear)해야 자식요소의 높이를 부모요소가 인지한다.
+        */
+        .images{width: 340px; margin:0 auto;}
+        /* 단어와 단어사이 간격으로 인해 이미지간 간격이 존재했음 */
+        .images img{margin-right:20px; float:left;}
+        /* 같은 타입중에서 막내 */
+        .images img:last-of-type{margin-right: 0;}
+        /* clear를 설정하는 요소는 반드시 block이어야 한다 */
+        .images span{display: block;}
+
+        /* 위의 방식이 효율적이지 못 함의 증명 */
+        .menu li{float:left; list-style:none; background: #ccc; margin-right:30px;}
+        /* class=menu의 뒤에 공간을 만들기 가상요소는 inline 요소 */
+        .cf::after{content:''; clear:both; display: block;}
+        </style>
+</head>
+<body>
+    <h1>Float</h1>
+    <hr>
+    <span>Inline element</span>
+    <hr>
+    <img src="http://placehold.it/100x100" alt="">
+    <p>
+        <!-- br은 한 줄 넘김 -->
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br class="clear">Nisi iusto ipsa dolore facilis quam et exercitationem mollitia beatae odio doloremque, distinctio minus sapiente, reprehenderit aliquam eveniet esse nobis. Debitis, minus!
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui voluptatibus dolorem, nihil ipsa ea cumque reprehenderit ipsam ad rerum illo dolorum architecto exercitationem facilis nam, deleniti aut vitae, veritatis labore.
+    </p>
+    
+
+    <!-- float을 적용한 자식과 부모 -->
+    <hr>
+    <p class="images">
+        <!-- image= inline-block 요소 가만히 있어도 가로배치 -->
+        <img src="http://placehold.it/100x100" alt="">
+        <img src="http://placehold.it/100x100" alt="">
+        <img src="http://placehold.it/100x100" alt="">
+        <span style="clear:both;"></span>
+    </p>
+
+    <hr>
+
+    <ul class="menu cf">
+        <li><a href="">menu 1</a></li>
+        <li><a href="">menu 2</a></li>
+        <li><a href="">menu 3</a></li>
+    </ul>
+    <!-- 이처럼 작성하면 웹표준 검사에서 탈락 : ul의 자식요소는 li만 와야한다 -->
+    <!-- <div style="clear:both;"></div> -->
+    
+    <!-- ERROR 경험 -->
+    <!-- images의 높이가 인식되지 않아서 뒤따라 오는 hr이 붙는 현상 span 태그에는 높이가 지정되어있고 block태그로도 설정해놨었음. 개발자모드에서 하나씩 지워나가다보니 float:right가 문제였고 다른 span 태그에 적용된 것이 문제임이 밝혀짐 
+     body>span으로 바꾸어 해결!-->
+</body>
+</html>
