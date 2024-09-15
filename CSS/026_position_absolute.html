@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position absolute</title>
+    <style>
+        /* 다른 요소들은 이 요소의 위치를 빈 공간으로 인식하고 채우려고 함 */
+        .banner{border:1px solid; padding:20px; 
+            /* position:absolute;  */
+            /* 음수 값을 주어 화면에서 벗어나더라도 스크롤이 생기지 않음(가상이동) */
+            left:-100px; top:0px;}
+        /* body를 기준으로 움직이기 때문에 스크롤을 움직이면 이동 */
+        .test{height: 1000px;}
+        /* 기본 값(=static)이 아닌 부모의 경우 relative에 별도의 수치를 주지 않아서 제자리 */
+        section{
+            /* position:absolute;  */
+            left:100px; top:200px;}
+        /* section 태그 또한 부모에 따라 위치 조정 되게 absolute -> body가 기준이 됨 = */
+
+        /* 추가예제 child 박스가 parent의 오른쪽 아래 구석에 오도록 */
+        .parent{width:400px; height:300px; background: #ebebeb; position: relative; margin:20px auto;}
+        .child{width:100px; height:100px; background: #3498db; color:#fff; text-align: uppercase; position:absolute; right:0; bottom:0;}
+                        /* right, bottom에서 안 떨어져있다. */
+                        /* 왼쪽 바깥 가운데 = left:-100px; top:100px;
+                           정 가운데 = left:150px; top:100px;
+                           오른쪽 바깥 가운데 = right:-100px; top:100px;
+                           
+                            위의 경우는 child가 명확한 값이 있고 항상 같은 크기일 때
+                        */
+                        /* left의 설정값을 준다는 건 내가 원하는 요소의 왼쪽 기준 점이 부모의 왼쪽 기준점에서 얼마만큼 멀어짐을 의미 따라서 %로 설정하면 유동적으로 코드를 짬 */
+    </style>
+</head>
+<body>
+    <pre>
+        static : 기본값
+        relative : 자기 자신의 원래 위치를 기준으로 배치
+        absolute : 가까운 부모 중 position의 값이 static이 아닌 요소를 기준으로 배치
+        fixed : 브라우저 윈도우를 기준으로 배치
+        sticky : 스크롤이 생기면 지정한 위치에서 고정됨(지정 위치에 도달하면 고정)
+    </pre>
+    <section>
+        <div class="banner">
+            <img src="http://placehold.it/200x200" alt="">
+        </div>
+
+        <h2>Main content</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto voluptates aliquam molestiae et, asperiores perferendis obcaecati? Quibusdam perspiciatis corrupti minima eum similique incidunt ullam ipsam at hic. Maxime, tempora illum.
+        </p>
+    </section>
+    <!-- 
+        1. 요소의 위치를 다른 요소들이 모르게 된다.
+        2. 요소의 크기가 내용의 크기로 축소된다.(인라인 요소도 마찬가지)
+        3. 가까운 부모 중 position 속성의 값이 기본 값이 아닌 요소를 기준으로 배치된다.
+        4. 기준이 없다면 body가 기준이 된다.
+        5. left, right, top, bottom 값으로 위치를 설정한다.
+    -->
+    
+    <hr>
+    <!-- 추가 예제 -->
+    <div class="parent">
+        <div class="child">child</div>
+    </div>
+    <!-- div.test -->
+    <div class="test">스크롤 발생(body에 기준임을 확인)</div>
+    <!-- body가 기준이기 때문에 스크롤을 통해 body가 올라가면 따라 올라감 -->
+</body>
+</html>
