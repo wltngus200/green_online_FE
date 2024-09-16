@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position 예제</title>
+    <style>
+        .slidewrapper{width:70%; height: 400px; margin:0 auto; background: #ebebeb; position:relative}
+        .btn{padding: 0 20px; line-height:50px; color:#fff; background-color: #000; text-decoration: none; display: inline-block; position: absolute;
+                /* top:200px; margin-top:-25px; */
+                top:calc(200px - 25px);
+                /* 두 줄로 나오는 것을 방지 */
+                white-space: nowrap;
+            }
+        .prev{
+            /* left:-79px; 고정값이 아니면 사용할 수 없다 */
+            right:calc(100% + 20px);}
+        .next{
+            /* right:-79px; 고정값이 아니면 사용할 수 없다 */
+            left:calc(100% + 20px);}
+    </style>
+</head>
+<body>
+    <h1>Position exercise</h1>
+    <div class="slidewrapper">
+        <h2>slide contents</h2>
+        <a href="" class="btn prev">PREV(이전)</a>
+        <a href="" class="btn next">NEXT(다음)</a>
+    </div>
+</body>
+</html>

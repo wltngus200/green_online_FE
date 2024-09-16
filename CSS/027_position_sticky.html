@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS3에서 새로 등장한 기능 -->
+    <title>position sticky</title>
+    <style>
+        *{box-sizing: border-box;}
+        /* 600보다 커지지는 않고 그 이하로 내려가면 100%를 차지한다는 의미 */
+        .wrapper{width:100%; max-width: 600px; margin: 60px auto 200px;}    
+        .content{padding: 0 15px; width:380px;}
+        .conten h1{margin-top:0;}
+        /* sticky가 없던 때에는 JS에서 스크롤 양을 계산하고 특정 값 이상을 넘어가면 고정되게 설정 */
+        .sidebar{padding:20px; width:170px; background-color: #434A54; color:#fff; position: sticky; top:50px;}
+        .sidebar h3 {margin: 0;}  
+        .content, .sidebar { float: left; } 
+        .cf:after {content:''; display: block; clear: both;} 
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper cf">
+            <div class="content">
+                <h1>Scroll Down!</h1>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem sunt quisquam consequuntur provident voluptatibus tempora debitis recusandae suscipit aut quam voluptates nulla architecto, neque consectetur odit consequatur vero necessitatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem sunt quisquam consequuntur provident voluptatibus tempora debitis recusandae suscipit aut quam voluptates nulla architecto, neque consectetur odit consequatur vero necessitatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem sunt quisquam consequuntur provident voluptatibus tempora debitis recusandae suscipit aut quam voluptates nulla architecto, neque consectetur odit consequatur vero necessitatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem sunt quisquam consequuntur provident voluptatibus tempora debitis recusandae suscipit aut quam voluptates nulla architecto, neque consectetur odit consequatur vero necessitatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem sunt quisquam consequuntur provident voluptatibus tempora debitis recusandae suscipit aut quam voluptates nulla architecto, neque consectetur odit consequatur vero necessitatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem sunt quisquam consequuntur provident voluptatibus tempora debitis recusandae suscipit aut quam voluptates nulla architecto, neque consectetur odit consequatur vero necessitatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem sunt quisquam consequuntur provident voluptatibus tempora debitis recusandae suscipit aut quam voluptates nulla architecto, neque consectetur odit consequatur vero necessitatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem sunt quisquam consequuntur provident voluptatibus tempora debitis recusandae suscipit aut quam voluptates nulla architecto, neque consectetur odit consequatur vero necessitatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem sunt quisquam consequuntur provident voluptatibus tempora debitis recusandae suscipit aut quam voluptates nulla architecto, neque consectetur odit consequatur vero necessitatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias rem sunt quisquam consequuntur provident voluptatibus tempora debitis recusandae suscipit aut quam voluptates nulla architecto, neque consectetur odit consequatur vero necessitatibus!
+                </p>
+            </div>
+            <div class="sidebar">
+                <h3>sidebar</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

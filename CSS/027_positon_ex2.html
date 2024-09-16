@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position 예제2</title>
+    <style>
+        .answer{background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/485050/positon_btn_final.png) no-repeat; width:363px; height:197px; margin-bottom:50px;}
+
+        .lastest-news{width:300px; padding:20px; border:2px solid #ccc; margin-top:50px;
+            /* 그 자리에 있으면서 기본 값이 아님 */
+            position:relative;}
+            /* absolute는 부모의 영향을 받음 */
+        
+        .read-more{position:absolute; background: #000; color:#fff; text-decoration:none;padding:5px 10px; 
+        right:0; bottom:calc(100% + 10px);
+        /* bottom:100px; margin:10px; */
+        /* 폰트 사이즈가 달라져도 대응 가능 */
+        font-size:1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="answer"></div>
+    <div class="lastest-news">
+        <ul>
+            <li>리스트1</li>
+            <li>리스트2</li>
+            <li>리스트3</li>
+            <li>리스트4</li>
+            <li>리스트5</li>
+        </ul>
+        <!-- 리스트 더 보기 버튼이 리스트보다 위에 있는 코드는 리스트의 선형적인 코딩을 어겨 웹표준 위반 -->
+        <a href="#" class="read-more">Read More</a>
+    </div>
+</body>
+</html>
