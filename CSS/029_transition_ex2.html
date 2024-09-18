@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition 활용 : toggle switch</title>
+    <style>
+        .toggle{margin:100px auto; display: block; text-align:center;}
+        /* label은 inline 속성 */
+        label{cursor:pointer; text-indent: -9999px; width:100px; height:50px; background-color: #DFF7FA; border-radius:25px;
+            display: inline-block; position: relative;
+            /* 체크가 되었을 때 라벨이 바뀌는 과정 및 돌아오는 과정 */
+            transition: 0.4s;
+        }
+        label:after{content:'';position: absolute; width:42px; height:42px; border-radius: 50%; background: #a5cace; left:4px; top:4px; transition: 0.4s;}
+        
+        /* 체크가 되었을 때 */
+        #toggle-slider:checked+label{background: #96e7ef;}
+        #toggle-slider:checked+label:after{left:53px;background: #1d6269;}
+        /* 체크박스 스위치를 보이지 않게 함 */
+        #toggle-slider{display:none;}
+    </style>
+</head>
+<body>
+    <p class="toggle">
+        <input type="checkbox" id="toggle-slider">
+        <label for="toggle-slider">ON/OFF</label>
+    </p>
+</body>
+</html>

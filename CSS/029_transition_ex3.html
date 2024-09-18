@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition 활용 : aside navigation</title>
+    <style>
+        label{position:fixed; left:10px; top:10px; background: #fff; border:2px solid; padding:5px 10px; z-index:100;}
+        aside{width:250px; background:#333; padding-top: 50px; padding-left:100px;
+                            /* width+padding-left */
+            position:fixed; left:-350px; top:0; bottom:0;
+            /* 나올 때 한번 튕겼다가 다시 살짝 들어감 */
+            transition:0.4s cubic-bezier(0.36, 0, 0.66, -0.56);
+        }
+        aside * {color:#fff;}
+        /* js를 배우면 굳이 css로 구현하지 않아도 되나 성능이 css가 더 낫다 */
+        
+        main p{line-height:1.5em; margin:2em 0;}
+        
+        /* 체크 되었을 때 */
+        /* 메뉴 버튼의 색 반전 */
+        #toggle:checked+label{background: #000; color:#fff;}
+        /* 메뉴가 너무 튀어나가기때문에 완충용으로 50px 적용 */
+        #toggle:checked~aside{left:-50px;
+            /* 되돌아 갈 때의 튕김 적용 */
+            transition:0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        </style>
+</head>
+<body>
+    <input type="checkbox" id="toggle">
+    <label for="toggle">MENU</label>
+    <aside>
+        <h2>About Us</h2>
+        <ul>
+            <li><a href="">CEO greeting</a></li>
+            <li><a href=""></a>Vision</li>
+            <li><a href=""></a>History</li>
+            <li><a href=""></a>Contact</li>
+        </ul>
+    </aside>
+
+    <main>
+        <h2>Content title</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, beatae molestias quo non, doloremque sint fuga mollitia sapiente error quasi repudiandae, blanditiis hic cum soluta animi sed ipsum eius fugiat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, beatae molestias quo non, doloremque sint fuga mollitia sapiente error quasi repudiandae, blanditiis hic cum soluta animi sed ipsum eius fugiat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, beatae molestias quo non, doloremque sint fuga mollitia sapiente error quasi repudiandae, blanditiis hic cum soluta animi sed ipsum eius fugiat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, beatae molestias quo non, doloremque sint fuga mollitia sapiente error quasi repudiandae, blanditiis hic cum soluta animi sed ipsum eius fugiat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, beatae molestias quo non, doloremque sint fuga mollitia sapiente error quasi repudiandae, blanditiis hic cum soluta animi sed ipsum eius fugiat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, beatae molestias quo non, doloremque sint fuga mollitia sapiente error quasi repudiandae, blanditiis hic cum soluta animi sed ipsum eius fugiat.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, beatae molestias quo non, doloremque sint fuga mollitia sapiente error quasi repudiandae, blanditiis hic cum soluta animi sed ipsum eius fugiat.
+        </p>
+    </main>
+</body>
+</html>
