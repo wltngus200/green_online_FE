@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timing-function</title>
+    <style>
+        .box{width:100px; height:100px; background: silver;}
+
+        /* 
+        transition-timing-function
+            ease, ease-in, ease-out, ease-in-out
+        */
+        figure img{width: 200px; height: 200px;
+            transition-property: width; transition-duration: 0.3s;
+            transition-delay: 0.5s;
+            /* 나만의 속도 모델 = cubic-bezier.com */
+            transition-timing-function: cubic-bezier(0,.43,1,-0.9);
+            /* 기준 선을 넘어갔다 돌아오는 모델은 커졌다가 줄어듦 */
+            /* transition-timing-function: cubic-bezier(0,1,1,-0.6); */
+            /* 하나로 통합하여 작성(전체 시간, 딜레이시간 값의 순서만 유지하면 됨) */
+            transition: width 0.3s 0.5s cubic-bezier(0,.43,1,-0.9);
+        }
+        /*
+        웹 개발에 많이 사용되는 커브모델(js, j쿼리에서 사용 가능한 모델 제공)
+            https://easings.net
+        /* transition-timing-function: cubic-bezier(0.68, -0.6, 0.32, 1.6); */
+        */
+
+        figure:hover img{width:400px;}
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+    <hr>
+    <figure>
+        <img src="http://placehold.it/200x200" alt="">
+        <figcaption>image description</figcaption>
+    </figure>
+</body>
+</html>

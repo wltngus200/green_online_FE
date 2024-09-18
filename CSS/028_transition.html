@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation transition</title>
+    <style>
+        .box{width:100px; height:100px; background: silver;
+            /* 
+            아래의 스타일을 적용해 변화 과정을 부여
+            transition-property(수치로 값을 적용하는 속성이여야 함, 단 색깔은 예외)
+            transition-duration
+            transition-delay
+            */
+            transition-property: all;/* width height */
+            /* 아래에서 시간을 다르게 설정할 때에는 콤마로 구분해야 함 */
+            transition-duration: 2s;
+            /* 이벤트가 없어졌을 때 돌아가는 속도도 결정 */
+            transition-delay: 0;
+            /* display:block; */
+            /* transition-property: block;  */
+            /* transition-property: background; */
+            /* transition-duration: 1s; */
+        }
+
+        .box:hover{
+            width:200px; height:200px;
+            /* display:none; */
+            /* background: green; */
+
+            /* 여기에만 적용해 둘 경우 원래 상태로 돌아갈 때 적용되지 않음 */
+            transition-property: all;
+            transition-duration: 1s;
+            transition-delay: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
