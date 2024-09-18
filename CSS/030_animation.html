@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation의 기본 특징</title>
+    <style>
+        .box{width:100px; height:100px; background: silver;
+            /* 
+            transition과의 차이점은 event(hover, clich, checked)가 없이도 발생
+                animation-name
+                animation-duration
+                animation-delay
+            */
+            /* animation-name:change_color; animation-duration: 3s; animation-delay: 0.5s; */
+            /* 횟수 또한 transition과의 차이 */
+            /* animation-iteration-count: 2; */
+            /* 속도 조절 */
+            /* animation-timing-function: ease-in; */
+            /* 방향 설정 = alternate로 설정을 하려면 count가 1이면 안 됨 */
+            /* animation-direction: normal; */
+            /* 애니메이션의 종착지 */
+            /* animation-fill-mode: forwards; */
+
+            /* 통합된 코드 작성 */
+            animation:change_color 3s 0.5s 2 ease-in normal forwards;
+            }
+            
+            /* 아래와 같이 정의하면 마우스를 올렸을 때 애니메이션이 동작 */
+            /* .box:hover{ 
+                animation-name:change_color; animation-duration: 1000ms; animation-delay: 0.5s;
+            } */
+            @keyframes change_color {
+                /* from{background:red;}
+                to{background:blue;} */
+                /* 자동적으로 최초 속성으로 되돌아감 */
+                0%{background: silver;}
+                50%{background:yellow;}
+                100%{background:blue;}
+            }
+
+            /* 추가 예제 */
+            header *{opacity: 0;
+                animation: fadeIn 1.5s forwards ease-out;
+                /* 다른 요소에 영향을 주지 않고 움직이도록 설정 */
+                position:relative; top:60px;
+            }
+            @keyframes fadeIn {
+                from{opacity: 0; top:60px}
+                to{opacity: 1; top:0;}
+                /* 한 요소마다 딜레이를 걸어야 함 + 다른 요소에 영향 X */
+                /* 1.position:relative + top
+                   2.transform */
+            }
+            header h2{animation-delay:0.1s;}
+            header p{animation-delay:0.5s;}
+            header a{animation-delay:0.9s;}
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+
+    <hr>
+
+    <!-- 아래에서 한 태그씩 올라오는 애니메이션 -->
+    <header>
+        <h1>Main Title</h1>
+        <h2>Sub Title</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </p>
+        <a href="">Read More</a>
+    </header>
+    <hr>
+</body>
+</html>
