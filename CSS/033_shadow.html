@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그림자 shadow</title>
+    <!-- shadow는 2개도 지정 가능(콤마로 구분) -->
+    <style>
+        /* text-shadow */
+        .text{
+            font-size: 72px; 
+            /* text-shadow:x y blur-radius color(투명도 필수) */
+            /* text-shadow: 0 10px 0 rgba(0,0,0,.1);*/
+            /* text-shadow: 7px 8px 3px rgba(0,0,0,.2); */
+            /* text-shadow: 0 0 10px rgba(0,0,0,.8); */
+            /* text-shadow: -10px -10px 2px rgba(0,0,0,.2); */
+            text-shadow: 0px 0px 2px rgba(0,0,0,0);
+            transition: 0.3s ease-in;
+        }
+        .text:hover{
+            /* 콤마로 구분해 여러개의 값 지정 */
+            text-shadow: 0 0 10px rgba(0,0,0,.9),
+                        0 0 20px rgba(0,0,255,.6);
+        }
+
+        /* box-shadow */
+        .box{
+            width:300px; height:80px; border:1px solid #ebebeb; margin:50px;
+            /* box-shadow:x y blur (size) color(투명도 필수) */
+                                    /* size:  */
+            /* border-radius: 10px; */
+            /* box-shadow: 10px 10px 5px 10px rgba(0,0,0,.2) ; */
+
+            /* 사방이 둥글고 굵은 회색 그림자가 사방으로 있는 박스 */
+            /* border-radius:10px; */
+            /* border:10px solid #ebebeb; */
+            /* box-shadow: 0 0 0 10px rgba(0,0,0,.2); */
+
+            /* 안 쪽으로 그림자가 지는 박스 */
+            /* box-shadow: inset 15px 15px 0 rgba(0,0,0,.2); */
+            box-shadow: inset 0 0 10px rgba(0,0,0,.2);
+        }
+        img{transition:0.4s; margin:30px;}
+        img:hover{
+            box-shadow: 10px 10px 5px rgba(0,0,0,.2),
+                        10px 10px 10px rgba(0,255,0,.5);
+        }
+
+        /* input box에 shadow 활용 */
+        input{
+            /* input의 기본 아웃라인 제거 */
+            outline: none;
+            line-height: 60px; padding: 0 10px;
+            /* 사방으로 있는 보더 삭제 후 다시 넣기 */
+            border:none;
+            border:1px solid #ccc;
+        }
+        input:focus{
+            box-shadow: inset 0 0 5px rgba(0,0,255,.5);
+        }
+
+
+        /* section의 여백 */
+        section{height:1000px;}
+    </style>
+</head>
+<body>
+    <h1>shadow</h1>
+    <h2>text shadow</h2>
+    <h3 class="text">text shadow</h3>
+    <h2>box shadow</h2>
+    <div class="box"></div>
+    <hr>
+
+    <!-- 응용 -->
+    <!-- <img src="https://source.unsplash.com/category/nature/400x200" -->
+    <img src="https://picsum.photos/id/13/400/200">
+    <hr>
+    <input type="text" placeholder="Enter Your Name">
+
+    <!-- 스크롤을 위한 하위의 여백 제조 -->
+    <section>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, quos. Adipisci, dolores illum molestias, tenetur incidunt molestiae, qui distinctio rem recusandae illo rerum quod debitis animi dolorem fugiat. Consectetur, earum.
+        </p>
+    </section>
+</body>
+</html>
