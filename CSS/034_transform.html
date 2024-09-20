@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform 기초</title>
+    <style>
+        /* img{transform:translateX(0px); transition: 0.5s;} */
+        /* img:hover{transform:translateX(100px);} */
+        img{
+            /* 가상요소로 적용할 때 필요했던 초기값이 transform은 필요 없어짐 */
+            /* transform:translateY(0px); */
+            transition: 0.5s;
+            /* margin-top:0; */
+
+            /* 관점을 이미지로 이동 -> hover에서 transform이 덮어쓰기 되어버림 */
+            /* transform: perspective(1000px); */
+            
+            /* perspective 속성을 적었을 때만 적용 가능, 직접 적을 수 없다 */
+            /* perspective-origin: 0 50%; */
+            
+            /* transform을 할 때의 관점 기본값 50% 50% */
+            transform-origin: 0 50%;
+        }
+        /* 이미지는 계속 위치가 바뀌기 때문에 안정적인 서비스를 위해 수정 */
+        /* img:hover{ */
+        /* figure에 마우스를 hover할 때 img에 적용 */
+        figure:hover img{
+            /* 가상으로 움직이는 것이기 때문에 figcaption은 움직이지 않음 */
+            /* transform:translateX(100px) translateY(100px);  */
+            /* 따로 적을 시에는 콤마가 필요 없고 하나의 괄호에 적을 땐 콤마 필요 */
+            /* transform:translate(100px, 100px); */
+            /* margin-top:100px; */
+
+            /* z축 가상의 카메라(perspective)의 위치를 설정 필수 */
+            /* transform: translateZ(-200px); */
+            /* 덮어쓰기 되는 것을 방지하기 위해 perspective를 설정 */
+            /* transform: perspective(1000px) translate3d(100px, 100px, 200px); */
+        }
+        figure{
+            color: black; /* 빨간 줄 방지 */
+            /* 기준 거리가 작을 수록 많이 멀어지는 것처럼 느껴짐 
+            화면을 동적으로 보이게 하기 위해 기준 거리를 줄이는 것도 방법 */
+            /* perspective: 1000px; */
+            /* 기본은 요소가 차지하는 중앙에서 보는 관점, 관점의 조절=perspective-origin */
+            /* perspective-origin: 0 50%; */
+            /* 왼쪽을 기준으로 보고 있기 때문에 왼쪽은 변화가 없음 */
+
+            /* 브라우저 크기에 상관 없이 관점이 가운데에 있었으면 할 때는 이미지에 직접 perspective를 적용 */
+        
+            /* img와 동시에 figcaption의 이동 적용 */
+            position: relative;
+
+            /* 이미지 크기만큼 figure을 설정 */
+            width:300px; height:200px;
+
+            overflow: hidden;
+        }
+        figcaption{position: absolute; 
+            left:0; right:0; top:0; bottom:0;
+            background: rgba(0,0,0,0.7); color:#fff;    
+        
+            transform:translateX(100%);
+            transition:0.5s;
+        }
+
+        figure:hover figcaption{transform:translateX(0%);}
+
+
+        /* 새로운 예제 */
+        .parent{height: 500px; border:1px solid #ccc; 
+            position:relative;
+        }
+        /* parent를 기준으로 정 가운데 위치시키고 싶음 */
+        .child{width:300px; height: 200px; background: green; color:#fff; 
+            position: absolute; left:50%; top:50%;
+            /* margin-left:-150px; margin-top:-100px; */
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <pre>
+        translate 이동 x, y, (x,y), z
+        가상으로 움직인다
+        => Z축 이동은 반드시 perspective가 있어야함(부모 or 자기 자신)
+    </pre>
+    <!-- figure 시멘틱 태그 -->
+    <figure>
+        <img src="img/flower.jpg">
+        <!-- 이미지의 설명 -->
+        <figcaption>
+            photo descriotion
+        </figcaption>
+    </figure>
+
+    <hr>
+    <div class="parent">
+        <div class="child">center</div>
+    </div>
+</body>
+</html>
