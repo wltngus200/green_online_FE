@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- cf.예제 25번 -->
+        <title>loading animation</title>
+        <style>
+            /* position(요소 배치), transform(요소 배치), animation(애니메이션), keyframe(애니메이션 타이밍) */
+            /* animation 화면이 띄워지자마자 출력 */
+            
+            
+            *{box-sizing: border-box;} /* width를 주면 border까지 사이즈 */
+            /* 50rem=50*16 */
+            .wrapper{max-width:50rem; width:100%; margin:5rem auto 15rem auto; text-align: center;}
+            
+            .spinner{position: relative; width:6rem; height:6rem; margin: 6rem auto; 
+                /* border:1px solid #3498db 임시로 잡은 외곽선 삭제 */
+                /* transform: rotate(135deg); 전체 다 걸어도 되지만, trasfrom의 기준점 연습 */
+            }
+
+            .spinner div[class^="curve"]{
+                /* 속성 선택자 p.326 각 요소들의 위치를 잡기 위해 활용 */
+                /* border:1px solid #3498db; */
+                /* 기준점이 각 요소의 중앙 */
+                transform: rotate(135deg);
+                /* animation p.377 */
+                animation: spin 4s infinite;
+            }
+            @keyframes spin {
+                0%{transform: rotate(135deg); opacity: 1;}
+                25%{opacity: 0.75;}
+                50%{transform:rotate(675deg); opacity: 1;}
+                75%{opacity: 0.75;}
+                100%{transform:rotate(135deg); opacity: 1;}
+            }
+            
+            /* 자식 요소들의 위치 결정 (absolute) */
+            .spinner div{position:absolute;}
+            
+            .curve_top_left{
+                /* 개별의 크기를 지정 */
+                width:3rem; height:3rem;
+                /* 각각의 위치 지정 */
+                left:0; top:0;
+                /* border를 특정 부분에만 부여하고 각도 조절 */
+                border-top: 0.5rem solid #3498db; border-left:0.5rem solid #3498db;
+                /* border-radius: 50%; 방향을 지정해 줄 필요가 있다 */
+                border-top-left-radius: 100%;
+                /* 회전 기준점 재설정 */
+                transform-origin: 100% 100%;
+            }
+            .curve_bottom_right{
+                width:3rem; height:3rem;
+                right:0; bottom:0;
+                border-bottom:0.5rem solid #3498db; border-right:0.5rem solid #3498db;
+                /* 상/하를 우선 기입 */
+                border-bottom-right-radius:100%;
+                transform-origin: 0 0;
+            }
+            .curve_top_right{
+                /* 3rem만큼의 공간이 비어있고 나는 2rem 중심에 닿게 하기 */
+                width:2rem; height:2rem;
+                top:1rem; right:1rem;
+                border-top:0.5rem solid #3498db; border-right:0.5rem solid #3498db;
+                border-top-right-radius:100%;
+                transform-origin: 0 100%;
+            }
+            .curve_bottom_left{
+                width:2rem; height:2rem;
+                bottom:1rem; left:1rem;
+                border-bottom:0.5rem solid #3498db; border-left:0.5rem solid #3498db;
+                border-bottom-left-radius: 100%;
+                transform-origin: 100% 0;
+            }
+
+            /* 가운데 동그라미 */
+            .center_circle{
+                width:1.5rem; height:1.5rem;
+                /* bottom의 점이 50%지점에 위치하게 됨 */
+                bottom:50%; left:50%; 
+                background: #3498db;
+                border-radius: 50%;
+                /* 정 가운데 위치하게 하려면 본인 사이즈의 50%를 더 이동 */
+                /* transform:translate(); p.356 좌표평면에서의 이동 */
+                transform: translate(-50%, 50%); /* 내가 left로 설정해서 -50% */
+                animation: pulse 2s infinite;
+            }
+            @keyframes pulse {
+                from{opacity: 1;}
+                50%{opacity: 0.5;}
+                to{opacity: 1;}
+            }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- 부모를 기준으로 절대값으로 위치를 잡아야 함 -->
+        <div class="spinner">
+            <div class="curve_top_left"></div>
+            <div class="curve_bottom_right"></div>
+            <div class="curve_top_right"></div>
+            <div class="curve_bottom_left"></div>
+            <div class="center_circle"></div>
+        </div>
+    </div>
+</body>
+</html>
