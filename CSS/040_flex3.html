@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cf. 예제 29번 -->
+    <title>flexible box layout3</title>
+    <style>
+        .wrap{width:500px; margin:20px auto; display:flex; border:1px solid #3498db; height:500px;
+            /* 넘친 요소를 아래로, 교차축에서의 배치 */
+            flex-wrap: nowrap;
+            /* align-content:space-evenly; */
+            /* 주축에서의 요소 배치 justify-content: space-between */
+            flex-direction: column;
+        }
+        .wrap div{background: #3498db; color:#fff; padding:20px; border:1px solid #fff;
+            /* width: 100%; */ 
+                        /* border까지가 요소의 크기 */
+            width: 50px; box-sizing: border-box;
+            flex:1; transition: 0.5s;
+        }
+        /* 순서 order(default=0) */
+        /* 크기 flex-grow, shrink, basis */
+        .wrap div:nth-child(1){
+            order:3;
+            /* flex-grow:0.5; */
+            /* width:500px; */
+            /* flex-shrink: .5; */
+            /* 기본 크기 50px+남은 여백의 50%를 사용 */
+            /* flex-shrink: 1, 0, auto는 같은 값 */
+            /* flex-basis: 50%; */
+
+            /* 같은 너비로 배열 */
+            /* flex:1 1 0; */
+            /* 값이 같을 때는 하나만 해서도 설정 가능 */
+            /* flex:1; */
+        }
+        .wrap div:nth-child(2){
+            order:2;
+            /* flex:1 1 0; */
+            /* 제일 작은 단위=flex:1이고 그 2배를 차지 */
+            /* flex:2; */
+        }
+        .wrap div:nth-child(3){
+            order:1;
+            /* flex:1 1 0; */
+            /* flex:1; */
+        }
+        /* 마우스를 올린 요소만 커지게 */
+        .wrap div:hover{flex:2;}
+
+        /* 반응형 = max-width가 768 이하에서는 아래의 CSS가 동작 */
+        @media screen and (max-width:768px){
+            body{background: #ebebeb;}
+            .wrap div:nth-child(2){order:-2;}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

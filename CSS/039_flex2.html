@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- cf. 예제 28 -->
+    <title>flexible box layout2</title>
+    <style>
+        .wrap{width:500px; margin:20px auto;
+            display: flex; border:1px solid #3498db;
+            /* 주축의 기준으로 정렬(시작점부터, 끝점부터, 좌우 여백 등) */
+            /* justify-content: space-between; */
+            /* 
+                space between: 양 끝에 배치 후 남는 건 균일
+                space around: 요소 양 옆으로 같은 여백을 설정
+                space evenly: 끝 점을 포함해서 요소간 간격을 동일하게(IE 작동X)
+            */
+            height:500px;
+            /* 교차축을 기준으로 정렬(시작점부터, 끝점부터, 늘여서 등) */
+            align-items: center;
+            /* 주축과 교차축을 바꿈 */
+            flex-direction: column;
+        }
+        .wrap div{background: #3498db; color:#fff;
+            padding:20px;
+        }
+        .wrap div:last-child{align-self: stretch;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>
