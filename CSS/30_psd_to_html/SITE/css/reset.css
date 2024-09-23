@@ -1,0 +1,59 @@
+/* reset.css copy */
+
+/* 많이 쓰는 요소들의 margin, padding 초기화 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%; /* 16px */
+	font: inherit;
+	/* 인라인 요소가 가로로 잇따라 나올 때 높낮이가 안 맞는 부분 설정 */
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+/* html5부터 시작된 섹셔닝 태그를 IE가 인지하지 못 하기 때문에 main 추가 */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, main {
+	display: block;
+}
+body {
+	/* ex. h1에 20px이라고 설정 하면 100%처럼 적용 */
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+/* 인용문 쓰면 공백 + 따옴표 제거 */
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	/* 테이블에 border를 주면 2중선이 나오는데 그걸 쌓음(collapse) */
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 링크의 색상도 리셋을 하지 않기 때문에 추가 */
+a{color:#fff; text-decoration: none;}
+/* 이미지도 밑에 1~2px의 공백이 생기는데 없애줌 */
+img{vertical-align: top;}
+
+/* 이 CSS가 우리가 작성한 main.css에 딸려오도록 설정 */
+/* 크로스 브라우징이 미흡하고, 모바일 화면에 다른 부분을 커버 못 해줌 */
+/* 그러한 점을 통일해주는 CSS normalize */

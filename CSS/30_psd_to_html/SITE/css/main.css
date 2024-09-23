@@ -1,0 +1,119 @@
+/* 아래와 같은 초기화 방법이 아니라 검색을 통한 초기화 reset.css 검색 후 reset.css 파일 */
+/* *{margin:0; padding:0;font-size: 16px;font-weight: normal;} */
+
+/* normalize를 먼저 불러오도록 순서 조정 */
+/* 크로스 브라우징, 모바일 화면 등을 보완 */
+@import url('normalize.css');
+/* 검색을 통해 얻은 reset.css를 main.css에서 딸려나오게 */
+@import url('reset.css');
+/* import는 최상단에서 */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Raleway:wght@400;700&display=swap');
+/* 
+font-family:'Alegreya Sans', sans-serif;
+font-family:'Raleway', sans-serif;
+*/
+
+/* =============LayOut============= */
+main{width: 1300px; margin:55px auto 0;
+    line-height: 1;
+}
+body{background:#1d1d1d; color:#fff;}
+/* 그림자가 있는 요소 공통의 클래스 */
+.shadow{box-shadow: 0 0 80px rgba(43,43,43,0.3);}
+
+/* =============Typography============= */
+/* 사용된 웹폰트를 fonts.google.com에서 찾기 */
+    /* font size/line height */
+body{font:16px/28px 'Raleway', sans-serif;}
+/* 제목의 폰트 */
+h1, h2, h3, h4, h5, h6{font-family:'Alegreya Sans', sans-serif; color:#ad7835;}
+/* css 고급 var변수 존재 */
+/* line height는 reset.css에서 body에 값을 적용했음 */
+.sec_tt{font-size:60px;position: relative; margin-bottom: 37px;}
+/* 선은 가상요소이기 때문에 높이가 없음 */
+.sec_tt::after{content:''; position:absolute; width:91px; height: 3px; background: #ad7835; left:0; top:calc(100% + 9px);}
+
+/* =============Link & Button============= */
+        /* border까지 포함해서 55px 인라인 요소의 크기가 잡힐 수 있게 변경 */
+.btn{line-height: 53px; border:1px solid #6b4922; display:inline-block; padding:0, 43px; text-transform: uppercase; font-weight: 700; 
+    /* 링크의 색깔은 a태그까지 가서 반영 */
+    color: #ad7835;}
+
+/* =============Form============= */
+/* 높이, 배경, 선, text-area 배경색+선 */
+form label{display: none;}
+form input, form textarea{border:none; border-bottom:1px solid rgba(255,255,255,0.3);line-height:54px; display:inline-block; padding:0 8px; background: none;}
+/* text-area의 높이 설정 */
+form textarea{line-height:28px; min-height: 100px;}
+/* 버튼은 기본적으로 배경색이 있기 때문에 제거 */
+form button{background:none;}
+
+/* ==========================042_design CSS========================== */
+
+/* =============Header============= */
+/* body 바로 아래의 header / vh=viewport 높이 */
+body>header{height:100vh; background: url('../images/header_bg.jpg') no-repeat center top/cover;
+    /* 이미지 사이즈 문제로 여백이 보임 이미지 사이즈는 position과 힘께 써야 함 */
+    /* top/100% 를 쓰면 가로가 줄어들 때 아래를 사진이 채워주지 못 함 */
+    display: flex; justify-content: center; align-items: center;
+}
+/* 슬로건 */
+/* 높이는 지정하지 않는 것이 좋음 -> 브라우저 줄어들 때 padding을 통해 위 아래의 여백 유지 */
+body>header .slogan{width:964px; border:10px solid #ad7835; box-sizing: border-box; padding:76px 0 90px; text-align: center;}
+body>header .slogan h2{font-family:'Raleway', sans-serif;font-size: 24px; font-weight: bold; color:#fff; position:relative;}
+body>header .slogan h2::after{content:''; width:91px; height:3px; background: #fff; position:absolute; left:50%; top:32px; transform: translateX(-50%);}
+body>header .slogan h1{font-size:180px; line-height:180px; color:#fff; margin:30px 0 20px;}
+body>header .slogan p{font-size:24px; text-transform: uppercase; color:#fff; font-family: 'Raleway', sans-serif; font-weight: bold;}
+
+/* =============About me============= */
+.about_me{background: #373737; padding:70px 70px 80px; position: relative;}
+.about_me p{width:470px; margin-bottom:28px;}
+.about_me p:nth-last-of-type(2){margin-bottom:48px;}
+/* 이미지의 원래 크기와 같으면 너비 지정 필요 없음 */
+.about_me img{position:absolute; top:-55px; right:64px;}
+/* section마다 여백 부여 =막내를 제외하고 위로 margin을 줌 */
+main>section+section{margin-top:244px;}
+
+/* =============Latest articles============= */
+                                                            /* 주축을 변경 */
+.latest_articles{display: flex; justify-content: center; flex-direction: column; align-items: center;}
+/* 가운데 정렬뿐만 아니라 h2의 밑줄을 함께 이동하기 위해 h2 본체를 중심으로 이동 */
+.latest_articles h2{text-align: center;}
+.latest_articles_list{display: flex; justify-content: space-between; width: 100%; padding-top:69px;}
+.latest_articles_list li{width:370px;}
+.latest_articles_list li:nth-child(2){margin-top:52px;}
+.latest_articles_list li h3{margin-top:29px; font-size: 22px; 
+    /* 그냥 border를 주면 밑에 바짝 붙어서 나오기 때문에 padding을 주어야 함 */
+    border-bottom: 1px solid #ad7835; padding-bottom:13px; margin-bottom: 15px;}
+    .latest_articles_list li p{margin-bottom:30px;}
+    .latest_articles_list li a{font-size: 16px; line-height: 16px; color: #ad7835; font-weight: bold; text-transform: uppercase;}
+    .latest_articles_list li a img{vertical-align: 0px; margin-left:20px;}
+
+/* =============Contact============= */
+.contact{background:#373737; padding:70px 70px 80px; display: flex; justify-content: flex-end; position: relative;}
+.contact img{position: absolute; left:64px; top:-55px;}
+.contact form{width:470px; }
+.contact form .field{display:flex; justify-content: space-between;}
+.contact form .field:first-of-type{margin-bottom: 40px;}
+.contact form .field input{width:214px;
+    /* input padding과 width가 겹쳐서 커짐, 지정한 width 안으로 border를 넣으라고 표시 */
+    box-sizing: border-box; color:#fff;}
+    
+    .contact form .field input::placeholder, .contact form textarea::placeholder{color:#fff;}
+    .contact form textarea{color:#fff; width:100%; 
+        /* text-box에 사이즈 조절 기능을 없앰 */
+        resize: none;}
+        .contact form button{margin-top:58px;}
+
+/* =============Footer============= */
+footer{margin-top: 351px; margin-bottom: 190px;}
+.social_link {display:flex; justify-content: center; gap:30px; }
+.social_link a{width:80px;height: 80px; display:block; box-sizing: border-box; border:1px solid #6b4922; text-align: center; 
+    /* 아이콘 같지만 글씨, border를 제외한 높이 */
+    line-height: 78px; font-size: 33px; color:#ad7835;
+    /* 변화에 걸리는 시간 */
+    transition: 0.35s;}
+.social_link a:hover{background:#ad7835; color:#fff}
+
+
+/* line-height가 있기 때문에 단순히 문자와 문자사이의 간격을 넣으면 안 됨 */

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel</title>
+    <!-- html은 기존 작성, CSS를 동영상과 함께 작성 -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- viewport 전체를 다 씀 -->
+    <header>
+        <div class="slogan">
+            <h2>LOREM IPSUM</h2>
+            <h1>Travel</h1>
+            <p>The inspirational adventures around the world</p>
+        </div>
+    </header>
+    <main>
+                                <!-- 그림자가 있는 요소를 파악하여 공통의 클래스 이름 부여 -->
+        <section class="about_me shadow">
+            <h2 class="sec_tt">About me</h2>
+            <!-- 모두를 감싸는 부모가 없기 때문에 p에 너비 지정 -->
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            </p>
+            <!-- 한 문단이 끝나고 한 줄만큼의 공간(margin) -->
+            <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+            </p>
+            <!-- 조금 더 큰 여백이 필요 -->
+            <p>
+                <!-- 너비를 주면 글씨 양에 따라 대응을 못 함 -->
+                <!-- 인라인 요소 -->
+                <a href="" class="btn">read more</a>
+            </p>
+            <img src="images/about_me.jpg" alt="" class="shadow">
+        </section>
+        <section class="latest_articles">
+            <h2 class="sec_tt">Latest articles</h2>
+            <ul class="latest_articles_list">
+                <li>
+                    <img src="images/latest_01.png" alt="latest_01">
+                    <h3>Lorem Ipsum Dolor</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur pisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+                    <a href="">read more <img src="images/more_arrow.png" alt=""></a>
+                </li>
+                <li>
+                    <img src="images/latest_02.png" alt="latest_02">
+                    <h3>Lorem Ipsum Dolor</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur pisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+                    <a href="">read more <img src="images/more_arrow.png" alt=""></a>
+                </li>
+                <li>
+                    <img src="images/latest_03.png" alt="latest_03">
+                    <h3>Lorem Ipsum Dolor</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur pisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation.</p>
+                    <a href="">read more <img src="images/more_arrow.png" alt=""></a>
+                </li>
+            </ul>
+        </section>
+        <section class="contact shadow">
+            <img src="images/contact.jpg" alt="" class="shadow">
+            <form action="#">
+                <h2 class="sec_tt">Contact</h2>
+                <div class="field">
+                    <label for="username" class="hidden">Your name</label>
+                    <input type="text" id="username" name="username" placeholder="Your name">
+                    <label for="useremail" class="hidden">Your Email</label>
+                    <input type="email" id="useremail" name="username" placeholder="Your Email">
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <!-- rows를 주면 칸의 크기가 늘어남 -->
+                    <textarea name="message" id="message" cols="30" rows="3" placeholder="Message"></textarea>
+                </div>
+                <!-- readmore와 같은 스타일을 위한 클래스 명 -->
+                <button class="btn">Send Message</button>
+            </form>
+
+        </section>
+        <!-- 각 section 사이에 여백 부여 -->
+    </main>
+    <footer>
+        <!-- fontawesome cdn -->
+        <ul class="social_link">
+            <!-- fontawesome으로 구현 되어있음 -->
+            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+            <li><a href=""><i class="fab fa-pinterest-p"></i></a></li>
+        </ul>
+    </footer>
+</body>
+</html>
